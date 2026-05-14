@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 
 <!-- ─ NAV ──────────────────────────────────────────── -->
 <nav>
+<div class="nav-inner">
   <a class="nav-logo" href="#">
     <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <polygon points="16,2 30,21 16,30 2,21" fill="#c97030"/>
@@ -24,10 +25,12 @@ import Layout from '../layouts/Layout.astro';
     <a class="nav-contact" href="mailto:hello@flintwood.io">hello@flintwood.io</a>
     <a class="btn" href="#contact">Get free report →</a>
   </div>
+</div>
 </nav>
 
 <!-- ─ HERO ─────────────────────────────────────────── -->
 <section id="hero">
+<div class="hero-inner">
   <div class="hero-text">
     <div class="hero-eyebrow">SOC 2 · AWS · AI/Agentic Risk</div>
 
@@ -43,7 +46,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
-  <!-- Report card mockup -->
   <div class="hero-visual">
     <div class="report-card">
       <div class="rc-top">
@@ -84,10 +86,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- ─ SIGNAL BAR ────────────────────────────────────── -->
 <div class="signal-bar">
+<div class="inner">
   <div class="signal-item reveal">
     <div class="signal-num">Monthly</div>
     <div class="signal-lbl">Continuous readiness — not a one-time snapshot</div>
@@ -105,9 +109,11 @@ import Layout from '../layouts/Layout.astro';
     <div class="signal-lbl">Bedrock, SageMaker &amp; agentic Lambda risk layer</div>
   </div>
 </div>
+</div>
 
 <!-- ─ HOW IT WORKS ──────────────────────────────────── -->
 <section id="how-it-works">
+<div class="inner">
   <div class="section-eyebrow reveal">How it works</div>
   <h2 class="section-title reveal d1">Three steps.<br>No agents. No ongoing access.</h2>
 
@@ -131,10 +137,12 @@ import Layout from '../layouts/Layout.astro';
       <div class="step-pill">Auditor-ready · Prioritized · No noise</div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- ─ AI RISK ────────────────────────────────────────── -->
 <section id="ai-risk">
+<div class="inner">
   <div class="ai-grid">
     <div class="ai-text">
       <div class="section-eyebrow reveal">Flintwood exclusive</div>
@@ -189,10 +197,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- ─ WHY FLINTWOOD ─────────────────────────────────── -->
 <section id="diff">
+<div class="inner">
   <div class="section-eyebrow reveal">Why Flintwood</div>
   <h2 class="section-title reveal d1" style="max-width:520px;margin-bottom:56px;">Built for mid-market AWS teams that move fast and audit annually.</h2>
 
@@ -213,10 +223,12 @@ import Layout from '../layouts/Layout.astro';
       <div class="diff-body">Every report is reviewed before it reaches your inbox. Context, severity, and prioritized remediation — not a wall of alerts. Your engineering team will actually read it.</div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- ─ CTA ───────────────────────────────────────────── -->
 <section id="contact">
+<div class="inner">
   <div class="cta-eyebrow">Free pilot</div>
   <h2 class="cta-title reveal">First report free.<br>No commitment.</h2>
   <p class="cta-body reveal d1">We'll scan your AWS environment and deliver a full SOC 2 readiness report — including AI risk findings — within 5 business days. No strings.</p>
@@ -224,10 +236,12 @@ import Layout from '../layouts/Layout.astro';
     <a class="btn btn-lg" href="mailto:hello@flintwood.io?subject=Pilot report request">Request pilot report →</a>
   </div>
   <div class="cta-note reveal d3">AWS only · Read-only IAM role · SOC 2 TSC mapping included</div>
+</div>
 </section>
 
 <!-- ─ FOOTER ────────────────────────────────────────── -->
 <footer>
+<div class="footer-inner">
   <div class="footer-left">
     <a class="nav-logo" href="#" style="text-decoration:none;">
       <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -244,6 +258,7 @@ import Layout from '../layouts/Layout.astro';
     <li><a href="#ai-risk">AI Risk</a></li>
     <li><a href="#contact">Get free report</a></li>
   </ul>
+</div>
 </footer>
 
 <script>
@@ -256,14 +271,26 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </Layout>
 
 <style>
+/* ─── MAX WIDTH CONTAINER ─────────────────────────── */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 /* ─── NAV ─────────────────────────────────────────── */
 nav {
   position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px; height: 62px;
   background: rgba(13,12,10,0.88);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 62px;
+  display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
   display: flex; align-items: center; gap: 10px;
@@ -298,9 +325,7 @@ nav {
 
 /* ─── HERO ────────────────────────────────────────── */
 #hero {
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; gap: 64px;
-  padding: 96px 80px;
+  padding: 96px 48px;
   min-height: calc(100vh - 62px);
   position: relative; overflow: hidden;
 }
@@ -310,6 +335,11 @@ nav {
   width: 700px; height: 700px;
   background: radial-gradient(ellipse, rgba(201,112,48,.07) 0%, transparent 65%);
   pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 64px;
 }
 .hero-eyebrow {
   display: flex; align-items: center; gap: 10px;
@@ -413,8 +443,10 @@ h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
 
 /* ─── SIGNAL BAR ──────────────────────────────────── */
 .signal-bar {
-  display: grid; grid-template-columns: repeat(4,1fr);
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.signal-bar .inner {
+  display: grid; grid-template-columns: repeat(4,1fr);
 }
 .signal-item {
   padding: 28px 40px;
@@ -446,7 +478,7 @@ h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
 
 /* ─── HOW IT WORKS ────────────────────────────────── */
 #how-it-works {
-  padding: 100px 80px;
+  padding: 100px 48px;
   background: var(--bg2);
   border-top: 1px solid var(--border);
 }
@@ -468,7 +500,7 @@ h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
 
 /* ─── AI RISK ─────────────────────────────────────── */
 #ai-risk {
-  padding: 100px 80px;
+  padding: 100px 48px;
   border-top: 1px solid var(--border);
 }
 .ai-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
@@ -510,7 +542,7 @@ h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
 
 /* ─── WHY FLINTWOOD ───────────────────────────────── */
 #diff {
-  padding: 80px 80px;
+  padding: 80px 48px;
   background: var(--surface);
   border-top: 1px solid var(--border);
 }
@@ -525,7 +557,7 @@ h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
 
 /* ─── CTA ─────────────────────────────────────────── */
 #contact {
-  padding: 120px 80px;
+  padding: 120px 48px;
   background: var(--bg2);
   border-top: 1px solid var(--border);
   text-align: center;
@@ -549,9 +581,12 @@ h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
 
 /* ─── FOOTER ──────────────────────────────────────── */
 footer {
-  padding: 32px 80px;
+  padding: 32px 48px;
   background: var(--bg);
   border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
 }
 .footer-left { display: flex; align-items: center; gap: 28px; }
@@ -582,16 +617,18 @@ footer {
 
 /* ─── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 960px) {
-  nav { padding: 0 24px; }
+  .nav-inner { padding: 0 24px; }
   .nav-links { display: none; }
-  #hero { grid-template-columns: 1fr; padding: 56px 28px; min-height: auto; gap: 48px; }
-  .signal-bar { grid-template-columns: 1fr 1fr; }
+  #hero { padding: 56px 24px; min-height: auto; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .signal-bar .inner { grid-template-columns: 1fr 1fr; }
   .signal-item { border-bottom: 1px solid var(--border); }
-  #how-it-works, #ai-risk, #diff, #contact { padding: 64px 28px; }
+  #how-it-works, #ai-risk, #diff, #contact { padding: 64px 24px; }
   .steps { grid-template-columns: 1fr; }
   .ai-grid { grid-template-columns: 1fr; gap: 48px; }
   .diff-grid { grid-template-columns: 1fr; gap: 28px; }
-  footer { flex-direction: column; gap: 20px; padding: 28px; text-align: center; }
+  footer { padding: 28px 24px; }
+  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
   .footer-left { flex-direction: column; gap: 10px; }
 }
 </style>
