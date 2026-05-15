@@ -138,8 +138,8 @@ import Layout from '../layouts/Layout.astro';
     <div class="step reveal">
       <div class="step-n">01</div>
       <div class="step-title">Deploy a read-only IAM role</div>
-      <div class="step-body">Deploy a single read-only IAM role via Terraform in under five minutes. Nothing runs in your account — we assume the role monthly, then disconnect.</div>
-      <div class="step-pill">CloudFormation · Terraform · 5 min</div>
+      <div class="step-body">Deploy a single read-only IAM role via one-click CloudFormation — no CLI, no local tooling. It opens in your AWS Console, pre-filled. Review the permissions, click Create Stack. We assume the role once a month, then disconnect.</div>
+      <div class="step-pill">One-click CloudFormation · 2 min · No CLI</div>
     </div>
     <div class="step reveal d1">
       <div class="step-n">02</div>
@@ -232,6 +232,37 @@ import Layout from '../layouts/Layout.astro';
       <div class="diff-num">Human reviewed</div>
       <div class="diff-title">Not a raw scanner dump</div>
       <div class="diff-body">Every report is reviewed before it reaches your inbox. Context, severity, and prioritized remediation — not a wall of alerts. Your engineering team will actually read it.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ─ FAQ ────────────────────────────────────────────── -->
+<section id="faq">
+<div class="inner">
+  <div class="section-eyebrow reveal">Common questions</div>
+  <h2 class="section-title reveal d1" style="max-width:560px;margin-bottom:48px;">Everything you need to know before connecting your AWS account.</h2>
+
+  <div class="faq-grid">
+    <div class="faq-item reveal">
+      <div class="faq-q">How does AWS access work? Do I need to install anything?</div>
+      <div class="faq-a">No. You deploy a read-only IAM role using a one-click CloudFormation button — it opens directly in your AWS Console, pre-filled. You review the exact permissions, click "Create Stack," and it's done in under 2 minutes. No CLI, no credentials to configure, nothing to install.</div>
+    </div>
+    <div class="faq-item reveal d1">
+      <div class="faq-q">What can Flintwood see in my AWS account?</div>
+      <div class="faq-a">Configuration metadata only — IAM policies, CloudTrail trails, GuardDuty findings, Config rules, S3 bucket policies, Lambda configurations, and Bedrock role permissions. We do not access S3 object contents, databases, application secrets, or any customer data stored in your account.</div>
+    </div>
+    <div class="faq-item reveal d2">
+      <div class="faq-q">Is it safe to give a third party read-only access?</div>
+      <div class="faq-a">You deploy the role — you control it. Every access we make appears in your CloudTrail logs. You can revoke access instantly by deleting the IAM role or CloudFormation stack — no support ticket, no offboarding process. This is the same pattern used by Wiz, Datadog, Lacework, and every major AWS security vendor.</div>
+    </div>
+    <div class="faq-item reveal d3">
+      <div class="faq-q">Does this affect my SOC 2 compliance?</div>
+      <div class="faq-a">It helps it. Our access is read-only, scoped to specific services, and logged in CloudTrail — that's CC7 evidence you're generating automatically. Auditors treat documented third-party security assessment access as a positive control signal. We provide a Data Processing Agreement on request that describes exactly what we access and how we handle it.</div>
+    </div>
+    <div class="faq-item reveal faq-full">
+      <div class="faq-q">How do I revoke access?</div>
+      <div class="faq-a">Delete the CloudFormation stack (or the IAM role directly) from your AWS Console. Access is revoked instantly — we can no longer assume the role. Nothing else required.</div>
     </div>
   </div>
 </div>
@@ -542,6 +573,20 @@ h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
 .diff-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; letter-spacing: -.01em; }
 .diff-body { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
 
+/* ─── FAQ ─────────────────────────────────────────── */
+#faq { padding: 80px 48px; background: var(--bg); border-top: 1px solid var(--border); }
+#faq .section-title { margin-bottom: 0; }
+.faq-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.faq-item { padding: 28px 32px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.faq-item:nth-child(2n) { border-right: none; }
+.faq-item:nth-last-child(-n+2) { border-bottom: none; }
+.faq-full { grid-column: 1 / -1; border-right: none; border-bottom: none; }
+.faq-q { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 10px; line-height: 1.4; letter-spacing: -.01em; }
+.faq-a { font-size: 13.5px; color: var(--muted); line-height: 1.68; }
+
 /* ─── SAMPLE REPORT ───────────────────────────────── */
 #sample-report { padding: 100px 48px; background: var(--bg2); border-top: 1px solid var(--border); }
 .sample-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
@@ -614,7 +659,11 @@ footer { padding: 32px 48px; background: var(--bg); border-top: 1px solid var(--
   .hero-inner { grid-template-columns: 1fr; gap: 48px; }
   .signal-bar .inner { grid-template-columns: 1fr 1fr; }
   .signal-item { border-bottom: 1px solid var(--border); }
-  #soc2-explainer, #how-it-works, #ai-risk, #diff, #sample-report, #contact { padding: 64px 24px; }
+  #soc2-explainer, #how-it-works, #ai-risk, #diff, #faq, #sample-report, #contact { padding: 64px 24px; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .faq-item { border-right: none; }
+  .faq-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .faq-full { border-bottom: none; }
   .tsc-grid { grid-template-columns: 1fr; gap: 28px; }
   .steps { grid-template-columns: 1fr; }
   .ai-grid { grid-template-columns: 1fr; gap: 48px; }
