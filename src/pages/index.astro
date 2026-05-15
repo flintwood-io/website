@@ -33,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero-eyebrow">SOC 2 · AWS · AI/Agentic Risk</div>
     <h1 class="hero-h1">Your next audit will<br>ask about your<br><em>AI stack.</em></h1>
     <div class="hero-sub">We already checked.</div>
-    <p class="hero-body">Enterprise buyers require SOC 2 before they'll sign. Your auditor will test your AWS controls — access, logging, change management — and now your AI stack. Flintwood delivers a monthly readiness report so you know your posture before they do.</p>
+    <p class="hero-body">Flintwood delivers automated monthly SOC 2 readiness reports for AWS — with a dedicated AI and agentic risk layer your auditor hasn't mapped yet.</p>
     <div class="hero-ctas">
       <a class="btn btn-lg" href="#contact">Request free pilot report</a>
       <a class="btn-outline" href="#how-it-works">See how it works →</a>
@@ -85,19 +85,19 @@ import Layout from '../layouts/Layout.astro';
 <div class="inner">
   <div class="signal-item reveal">
     <div class="signal-num">Monthly</div>
-    <div class="signal-lbl">Report delivered every 30 days — gaps caught before your auditor does</div>
+    <div class="signal-lbl">Continuous readiness — not a one-time snapshot</div>
   </div>
   <div class="signal-item reveal d1">
     <div class="signal-num">5 days</div>
-    <div class="signal-lbl">First report in your inbox within 5 business days</div>
+    <div class="signal-lbl">First report delivered, free, no commitment</div>
   </div>
   <div class="signal-item reveal d2">
     <div class="signal-num">Read-only</div>
-    <div class="signal-lbl">One read-only IAM role — nothing runs in your environment</div>
+    <div class="signal-lbl">Single IAM role — nothing runs in your account</div>
   </div>
   <div class="signal-item reveal d3">
     <div class="signal-num">AI-native</div>
-    <div class="signal-lbl">Bedrock, SageMaker, Lambda agents — mapped to SOC 2 TSC</div>
+    <div class="signal-lbl">Bedrock, SageMaker &amp; agentic Lambda risk layer</div>
   </div>
 </div>
 </div>
@@ -139,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="step-n">01</div>
       <div class="step-title">Deploy a read-only IAM role</div>
       <div class="step-body">Deploy a single read-only IAM role via Terraform in under five minutes. Nothing runs in your account — we assume the role monthly, then disconnect.</div>
-      <div class="step-pill">Terraform · 5 min setup</div>
+      <div class="step-pill">CloudFormation · Terraform · 5 min</div>
     </div>
     <div class="step reveal d1">
       <div class="step-n">02</div>
@@ -164,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="ai-text">
       <div class="section-eyebrow reveal">Flintwood exclusive</div>
       <h2 class="section-title reveal d1">The AI risk layer your auditor doesn't have a checklist for yet.</h2>
-      <p class="ai-body reveal d2">Auditors are already asking about AI workloads. SOC 2 doesn't have a formal AI checklist yet — they're applying existing controls: CC6 (who can invoke your models), CC7 (are invocations logged), CC8 (do your agents have approval gates). Flintwood maps your Bedrock roles, Lambda agent chains, and SageMaker endpoints to these controls every month — before your auditor improvises the questions.</p>
+      <p class="ai-body reveal d2">As your AI stack grows, so does your audit surface. Bedrock roles, autonomous Lambda chains, unlogged model invocations — none of this is in the standard SOC 2 playbook. We track it before your auditor asks about it.</p>
       <ul class="detect-list reveal d3">
         <li>Bedrock and SageMaker access control gaps</li>
         <li>Agentic IAM role over-permission detection</li>
@@ -221,12 +221,12 @@ import Layout from '../layouts/Layout.astro';
     <div class="diff-item reveal">
       <div class="diff-num">Independent</div>
       <div class="diff-title">No cloud vendor agenda</div>
-      <div class="diff-body">Flintwood is AWS-only by design — not a feature of a larger platform with a quarterly roadmap you can't influence. Your readiness report is ours to obsess over.</div>
+      <div class="diff-body">Flintwood is cloud-neutral and AWS-only by design — not a feature of a larger platform with a quarterly roadmap you can't influence. Your readiness report is ours to obsess over.</div>
     </div>
     <div class="diff-item reveal d1">
       <div class="diff-num">Narrow scope</div>
       <div class="diff-title">SOC 2 + AWS + AI. That's it.</div>
-      <div class="diff-body">We don't sell a 400-page CNAPP platform. We do one thing: monthly SOC 2 readiness for AWS, including the AI risk layer no other tool has mapped yet. When your auditor asks about your Bedrock deployment, you'll have 12 months of evidence ready.</div>
+      <div class="diff-body">We don't sell you a 400-page CNAPP platform you'll use 10% of. We do one thing: monthly SOC 2 readiness for AWS, with an AI risk layer that no other tool has mapped yet.</div>
     </div>
     <div class="diff-item reveal d2">
       <div class="diff-num">Human reviewed</div>
@@ -314,7 +314,7 @@ import Layout from '../layouts/Layout.astro';
 <div class="inner">
   <div class="cta-eyebrow">Free pilot</div>
   <h2 class="cta-title reveal">First report free.<br>No commitment.</h2>
-  <p class="cta-body reveal d1">We'll scan your AWS environment and deliver a full SOC 2 readiness report — CC6, CC7, CC8, plus AI risk findings — within 5 business days. Know your gaps before your auditor does.</p>
+  <p class="cta-body reveal d1">We'll scan your AWS environment and deliver a full SOC 2 readiness report — including AI risk findings — within 5 business days. No strings.</p>
   <div class="cta-actions reveal d2">
     <a class="btn btn-lg" href="mailto:hello@flintwood.io?subject=Pilot report request">Request pilot report →</a>
   </div>
@@ -339,7 +339,6 @@ import Layout from '../layouts/Layout.astro';
   <ul class="footer-links">
     <li><a href="#how-it-works">How it works</a></li>
     <li><a href="#ai-risk">AI Risk</a></li>
-    <li><a href="#sample-report">Sample report</a></li>
     <li><a href="#contact">Get free report</a></li>
   </ul>
 </div>
