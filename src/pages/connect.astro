@@ -4,141 +4,148 @@ import Layout from '../layouts/Layout.astro';
 const LAMBDA_URL = "https://xvpfb3b7avfnh4ad5tgkev733y0ukujb.lambda-url.us-east-1.on.aws/";
 const CF_TEMPLATE_URL = "https://flintwood-public-738497419241.s3.amazonaws.com/customer-iam-role.yaml";
 const CF_REGION = "us-east-1";
+const FLINTWOOD_ACCOUNT_ID = "738497419241";
+const CF_REMOVE_URL = `https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active&filteringText=FlinttwoodAuditRole`;
 ---
 <Layout title="Connect your AWS account — Flintwood">
 
-<nav>
-<div class="nav-inner">
-  <a class="nav-logo" href="/">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <polygon points="16,2 30,21 16,30 2,21" fill="#c97030"/>
-      <polygon points="16,2 30,21 16,17" fill="#e8924a"/>
-      <circle cx="27.5" cy="7" r="2.4" fill="#f0b458"/>
-    </svg>
-    <span class="logo-type">Flintwood</span>
-  </a>
-  <div class="nav-end">
+<nav class="connect-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">
+      <svg width="22" height="23" viewBox="0 0 46 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="23,2 37,8 31,11" fill="#f8c858"/>
+        <polygon points="37,8 43,22 33,26 31,11" fill="#e08535"/>
+        <polygon points="43,22 37,40 23,46 15,33 33,26" fill="#b06028"/>
+        <polygon points="23,46 9,40 15,33" fill="#7a3818"/>
+        <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#4a200e"/>
+        <polygon points="23,2 26,5 23,7 20,5" fill="#fff4cc"/>
+      </svg>
+      <span class="logo-type">Flint<em>wood</em></span>
+    </a>
     <a class="nav-contact" href="mailto:hello@flintwood.io">hello@flintwood.io</a>
   </div>
-</div>
 </nav>
 
 <section id="connect">
-<div class="inner">
+  <div class="inner">
 
-  <div class="connect-header">
-    <div class="eyebrow">AWS Connection</div>
-    <h1>Connect your AWS account.</h1>
-    <p class="subtitle">Two steps. Under 5 minutes. Read-only access you control.</p>
-  </div>
+    <div class="connect-header">
+      <div class="eyebrow">AWS Connection</div>
+      <h1>Connect your AWS account.</h1>
+      <p class="subtitle">Two steps. Under 5 minutes. Read-only access you control.</p>
+    </div>
 
-  <div class="steps-wrap">
+    <div class="steps-wrap" id="steps-wrap">
 
-    <!-- Step 1 -->
-    <div class="step-card" id="step1-card">
-      <div class="step-num">01</div>
-      <div class="step-body">
-        <h2>Deploy the read-only IAM role</h2>
-        <p>Click the button below. It opens directly in your AWS Console with everything pre-filled — role name, permissions, and your unique External ID. Review the permissions, click <strong>Create Stack</strong>. Done in under 2 minutes.</p>
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h2>Deploy the read-only IAM role</h2>
+          <p>Click the button below. It opens directly in your AWS Console with everything pre-filled — role name, permissions, and your unique External ID. Review the permissions, click <strong>Create stack</strong>. Done in under 2 minutes.</p>
 
-        <div class="permission-list">
-          <div class="perm-title">What the role can read</div>
-          <div class="perm-grid">
-            <div class="perm-item"><span class="perm-check">✓</span> IAM policies &amp; roles</div>
-            <div class="perm-item"><span class="perm-check">✓</span> CloudTrail configuration</div>
-            <div class="perm-item"><span class="perm-check">✓</span> GuardDuty findings</div>
-            <div class="perm-item"><span class="perm-check">✓</span> S3 bucket policies</div>
-            <div class="perm-item"><span class="perm-check">✓</span> Lambda configurations</div>
-            <div class="perm-item"><span class="perm-check">✓</span> Bedrock &amp; SageMaker roles</div>
+          <div class="permission-list">
+            <div class="perm-title">What the role can read</div>
+            <div class="perm-grid">
+              <div class="perm-item"><span class="perm-check">✓</span> IAM policies &amp; roles</div>
+              <div class="perm-item"><span class="perm-check">✓</span> CloudTrail configuration</div>
+              <div class="perm-item"><span class="perm-check">✓</span> GuardDuty findings</div>
+              <div class="perm-item"><span class="perm-check">✓</span> S3 bucket policies</div>
+              <div class="perm-item"><span class="perm-check">✓</span> Lambda configurations</div>
+              <div class="perm-item"><span class="perm-check">✓</span> Bedrock &amp; SageMaker roles</div>
+            </div>
+            <div class="perm-never">Never accesses S3 object contents, secrets, databases, or application data.</div>
           </div>
-          <div class="perm-never">Never accesses S3 object contents, secrets, databases, or application data.</div>
-        </div>
 
-        <a id="cf-launch-btn" class="btn btn-lg" href="#" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Deploy IAM role in AWS Console
+          <a id="cf-launch-btn" class="btn btn-primary" href="#" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Deploy IAM role in AWS Console
+          </a>
+          <div class="step-note">Opens in a new tab · No CLI required · Your account, your control</div>
+        </div>
+      </div>
+
+      <div class="step-connector">
+        <div class="connector-line"></div>
+        <span class="connector-label">After stack creation completes (~30 sec)</span>
+        <div class="connector-line"></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h2>Paste your Role ARN</h2>
+          <p>Once CloudFormation finishes, copy the <strong>RoleArn</strong> from the stack Outputs tab and paste it below.</p>
+
+          <div class="arn-help">
+            <div class="arn-help-title">Where to find it</div>
+            <div class="arn-help-body">CloudFormation → Stacks → <strong>FlinttwoodAuditRole</strong> → Outputs tab → <strong>RoleArn</strong></div>
+            <div class="arn-example">arn:aws:iam::<em>your-account-id</em>:role/FlinttwoodAuditRole</div>
+          </div>
+
+          <form id="arn-form">
+            <div class="field">
+              <label for="role-arn">Role ARN</label>
+              <input
+                type="text"
+                id="role-arn"
+                name="role_arn"
+                placeholder="arn:aws:iam::123456789012:role/FlinttwoodAuditRole"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+              Connect AWS account →
+            </button>
+            <div id="form-error" class="form-error" style="display:none"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Success state -->
+    <div id="success-panel" style="display:none">
+      <div class="success-icon">✓</div>
+      <h2>You're connected.</h2>
+      <p>Your first SOC 2 readiness scan will run within the hour. We'll email you the report when it's ready — usually within 5 business days after human review.</p>
+      <p>We've sent a confirmation to your email with everything you need to know.</p>
+      <div class="remove-note">
+        <div class="remove-note-title">Removing access later</div>
+        <p>To remove Flintwood's access at any time, delete the CloudFormation stack from your AWS Console — it takes about 30 seconds.</p>
+        <a id="cf-remove-btn" class="btn btn-outline" href={CF_REMOVE_URL} target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Remove IAM role in AWS Console
         </a>
-        <div class="step-note">Opens in a new tab · No CLI required · Your account, your control</div>
       </div>
-    </div>
-
-    <div class="step-connector">
-      <div class="connector-line"></div>
-      <div class="connector-label">After stack creation completes</div>
-      <div class="connector-line"></div>
-    </div>
-
-    <!-- Step 2 -->
-    <div class="step-card" id="step2-card">
-      <div class="step-num">02</div>
-      <div class="step-body">
-        <h2>Paste your Role ARN</h2>
-        <p>Once CloudFormation finishes (about 30 seconds), copy the <strong>RoleArn</strong> from the stack Outputs tab and paste it below.</p>
-
-        <div class="arn-help">
-          <div class="arn-help-title">Where to find it</div>
-          <div class="arn-help-body">CloudFormation → Stacks → <strong>FlinttwoodAuditRole</strong> → Outputs tab → <strong>RoleArn</strong></div>
-          <div class="arn-example">arn:aws:iam::<em>123456789012</em>:role/FlinttwoodAuditRole</div>
-        </div>
-
-        <form id="arn-form">
-          <div class="field">
-            <label for="role-arn">Role ARN</label>
-            <input
-              type="text"
-              id="role-arn"
-              name="role_arn"
-              placeholder="arn:aws:iam::123456789012:role/FlinttwoodAuditRole"
-              autocomplete="off"
-              spellcheck="false"
-            />
-          </div>
-          <button type="submit" class="btn btn-lg" id="submit-btn">
-            Connect AWS account →
-          </button>
-          <div id="form-error" class="form-error" style="display:none"></div>
-        </form>
-
-      </div>
+      <p class="success-note">Questions? <a href="mailto:hello@flintwood.io">hello@flintwood.io</a></p>
     </div>
 
   </div>
-
-  <!-- Success state -->
-  <div id="success-panel" style="display:none">
-    <div class="success-icon">✓</div>
-    <h2>You're connected.</h2>
-    <p>Your first SOC 2 readiness scan will run within the hour. We'll email you the report when it's ready — usually within 5 business days after human review.</p>
-    <p class="success-note">Questions? <a href="mailto:hello@flintwood.io">hello@flintwood.io</a></p>
-  </div>
-
-</div>
 </section>
 
-<footer>
-<div class="footer-inner inner">
-  <div class="footer-left">
-    <span class="footer-brand">Flintwood</span>
+<footer class="connect-footer">
+  <div class="footer-inner inner">
+    <span class="footer-brand">Flint<em>wood</em></span>
     <span class="footer-copy">© 2026 Flintwood LLC</span>
   </div>
-</div>
 </footer>
 
-<script define:vars={{ LAMBDA_URL, CF_TEMPLATE_URL, CF_REGION }}>
-  // Read token from URL
+<script define:vars={{ LAMBDA_URL, CF_TEMPLATE_URL, CF_REGION, FLINTWOOD_ACCOUNT_ID }}>
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token') || '';
 
-  // Build CloudFormation quick-create URL
-  const cfUrl = [
-    `https://${CF_REGION}.console.aws.amazon.com/cloudformation/home`,
-    `?region=${CF_REGION}`,
-    `#/stacks/quickcreate`,
-    `?templateURL=${encodeURIComponent(CF_TEMPLATE_URL)}`,
-    `&stackName=FlinttwoodAuditRole`,
-    token ? `&param_ExternalId=${encodeURIComponent(token)}` : '',
-  ].join('');
+  // Build CloudFormation quick-create URL — pre-fills both parameters
+  const cfParams = new URLSearchParams({
+    templateURL: CF_TEMPLATE_URL,
+    stackName: 'FlinttwoodAuditRole',
+    param_FlinttwoodAccountId: FLINTWOOD_ACCOUNT_ID,
+  });
+  if (token) cfParams.set('param_ExternalId', token);
 
+  const cfUrl = `https://${CF_REGION}.console.aws.amazon.com/cloudformation/home?region=${CF_REGION}#/stacks/quickcreate?${cfParams.toString()}`;
   document.getElementById('cf-launch-btn').href = cfUrl;
 
   // Form submission
@@ -146,24 +153,17 @@ const CF_REGION = "us-east-1";
   const submitBtn = document.getElementById('submit-btn');
   const errorEl = document.getElementById('form-error');
   const successPanel = document.getElementById('success-panel');
-  const stepsWrap = document.querySelector('.steps-wrap');
+  const stepsWrap = document.getElementById('steps-wrap');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const roleArn = document.getElementById('role-arn').value.trim();
 
-    if (!roleArn) {
-      showError('Please paste your Role ARN.');
-      return;
-    }
-
-    if (!token) {
-      showError('Missing onboarding token. Please use the link from your welcome email.');
-      return;
-    }
+    if (!roleArn) { showError('Please paste your Role ARN.'); return; }
+    if (!token) { showError('Missing onboarding token. Please use the link from your welcome email.'); return; }
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Connecting…';
+    submitBtn.textContent = 'Verifying role…';
     errorEl.style.display = 'none';
 
     try {
@@ -201,174 +201,174 @@ const CF_REGION = "us-east-1";
 </Layout>
 
 <style>
-:root {
-  --bg: #0d0c0a;
-  --surface: #141210;
-  --border: #2a2724;
-  --ember: #c97030;
-  --ember-lt: #e08c4a;
-  --white: #f7f4ef;
-  --text: #e8e4de;
-  --muted: #857f78;
-  --faint: #4a4540;
-  --green: #4a9e6a;
-  --green-bg: rgba(74,158,106,.1);
-}
+  .connect-nav {
+    background: rgba(26,22,18,0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+  .logo-type { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: #f5f0e8; }
+  .logo-type em { font-style: italic; }
+  .nav-contact { font-size: 13px; color: rgba(245,240,232,.45); text-decoration: none; transition: color .2s; }
+  .nav-contact:hover { color: rgba(245,240,232,.85); }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .inner { max-width: 720px; margin: 0 auto; width: 100%; padding: 0 24px; }
 
-body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  #connect { padding: 72px 0 100px; }
 
-.inner { max-width: 760px; margin: 0 auto; width: 100%; padding: 0 24px; }
+  .connect-header { text-align: center; margin-bottom: 56px; }
+  .eyebrow {
+    font-size: 11.5px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .12em; color: #b85e18; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: ''; display: block; width: 20px; height: 1px; background: #b85e18;
+  }
+  .connect-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 52px); font-weight: 400;
+    letter-spacing: -.025em; color: #1a1612;
+    margin-bottom: 12px; line-height: 1.1;
+  }
+  .subtitle { font-size: 16px; color: #9c9088; font-family: 'IBM Plex Sans', sans-serif; }
 
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(13,12,10,.88);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 48px; height: 62px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); }
-.logo-type { font-size: 15px; font-weight: 600; }
-.nav-end { display: flex; align-items: center; }
-.nav-contact { font-size: 13px; color: var(--muted); text-decoration: none; }
-.nav-contact:hover { color: var(--text); }
+  .steps-wrap { display: flex; flex-direction: column; gap: 0; }
 
-#connect { padding: 64px 0 96px; }
+  .step-card {
+    background: #ffffff;
+    border: 1px solid #ddd7cc;
+    border-radius: 10px;
+    padding: 36px 40px;
+    display: flex;
+    gap: 28px;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px; font-weight: 400; color: #ddd7cc;
+    line-height: 1; flex-shrink: 0; width: 52px; padding-top: 2px;
+  }
+  .step-body { flex: 1; }
+  .step-body h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px; font-weight: 600; color: #1a1612;
+    letter-spacing: -.01em; margin-bottom: 10px;
+  }
+  .step-body p { font-size: 14px; color: #5a5248; line-height: 1.7; margin-bottom: 20px; }
+  .step-body p strong { color: #1c1814; font-weight: 600; }
 
-.connect-header { text-align: center; margin-bottom: 56px; }
-.eyebrow {
-  font-size: 11px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: .1em; color: var(--ember); margin-bottom: 16px;
-}
-.connect-header h1 {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 42px; font-weight: 400; letter-spacing: -.02em;
-  color: var(--white); margin-bottom: 12px; line-height: 1.15;
-}
-.subtitle { font-size: 16px; color: var(--muted); }
+  .permission-list {
+    background: #f9f5ef;
+    border: 1px solid #ddd7cc;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+  }
+  .perm-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #9c9088; margin-bottom: 10px; }
+  .perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; margin-bottom: 12px; }
+  .perm-item { font-size: 13px; color: #1c1814; display: flex; align-items: center; gap: 7px; }
+  .perm-check { color: #2a7040; font-size: 11px; font-weight: 700; }
+  .perm-never { font-size: 12px; color: #9c9088; border-top: 1px solid #ddd7cc; padding-top: 10px; font-style: italic; }
 
-.steps-wrap { display: flex; flex-direction: column; gap: 0; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 500;
+    padding: 12px 22px; border-radius: 6px; text-decoration: none;
+    border: none; cursor: pointer; transition: background .2s, border-color .2s, color .2s;
+  }
+  .btn-primary { background: #b85e18; color: #fdfaf5; }
+  .btn-primary:hover { background: #c97030; }
+  .btn-primary:disabled { opacity: .55; cursor: not-allowed; }
+  .btn-outline {
+    background: transparent; color: #5a5248;
+    border: 1px solid #cac2b5; font-size: 13px; padding: 9px 16px;
+  }
+  .btn-outline:hover { border-color: #b85e18; color: #b85e18; }
 
-.step-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 36px 40px;
-  display: flex;
-  gap: 28px;
-}
+  .step-note { font-size: 12px; color: #9c9088; margin-top: 10px; }
 
-.step-num {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 48px; font-weight: 400; color: var(--faint);
-  line-height: 1; flex-shrink: 0; width: 48px; padding-top: 4px;
-}
+  .step-connector {
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 0; max-width: 480px; margin: 0 auto;
+  }
+  .connector-line { flex: 1; height: 1px; background: #ddd7cc; }
+  .connector-label { font-size: 11.5px; color: #9c9088; white-space: nowrap; }
 
-.step-body { flex: 1; }
-.step-body h2 {
-  font-size: 18px; font-weight: 600; color: var(--white);
-  letter-spacing: -.01em; margin-bottom: 10px;
-}
-.step-body p { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
-.step-body p strong { color: var(--text); font-weight: 600; }
+  .arn-help {
+    background: #f9f5ef;
+    border: 1px solid #ddd7cc;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+  .arn-help-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #9c9088; margin-bottom: 6px; }
+  .arn-help-body { font-size: 13px; color: #5a5248; margin-bottom: 8px; line-height: 1.55; }
+  .arn-help-body strong { color: #1c1814; }
+  .arn-example { font-family: 'Courier New', monospace; font-size: 12px; color: #9c9088; }
+  .arn-example em { color: #b85e18; font-style: normal; }
 
-.permission-list {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 16px 20px;
-  margin-bottom: 24px;
-}
-.perm-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 10px; }
-.perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; margin-bottom: 12px; }
-.perm-item { font-size: 12.5px; color: var(--text); display: flex; align-items: center; gap: 6px; }
-.perm-check { color: var(--green); font-size: 11px; }
-.perm-never { font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px; font-style: italic; }
+  .field { margin-bottom: 14px; }
+  label { display: block; font-size: 11.5px; font-weight: 600; color: #9c9088; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .08em; }
+  input[type="text"] {
+    width: 100%; background: #f9f5ef;
+    border: 1px solid #ddd7cc; border-radius: 6px;
+    padding: 11px 14px; font-family: 'Courier New', monospace;
+    font-size: 13px; color: #1c1814; outline: none;
+    transition: border-color .2s;
+  }
+  input[type="text"]::placeholder { color: #cac2b5; }
+  input[type="text"]:focus { border-color: #b85e18; }
 
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--ember); color: var(--white);
-  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
-  padding: 11px 22px; border-radius: 7px; text-decoration: none;
-  border: none; cursor: pointer; transition: background .2s;
-}
-.btn:hover { background: var(--ember-lt); }
-.btn:disabled { opacity: .5; cursor: not-allowed; }
-.btn-lg { font-size: 15px; padding: 13px 26px; }
+  .form-error { font-size: 13px; color: #b02818; margin-top: 10px; background: #fde8e8; border-radius: 5px; padding: 8px 12px; }
 
-.step-note { font-size: 12px; color: var(--faint); margin-top: 10px; }
+  #success-panel { text-align: center; padding: 80px 24px; }
+  .success-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #e0f0e8; border: 1px solid #b0d8c0;
+    color: #2a7040; font-size: 22px; line-height: 56px;
+    margin: 0 auto 24px; text-align: center; font-weight: 600;
+  }
+  #success-panel h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 400; color: #1a1612;
+    margin-bottom: 16px; letter-spacing: -.02em;
+  }
+  #success-panel p { font-size: 15px; color: #5a5248; line-height: 1.7; max-width: 480px; margin: 0 auto 12px; }
 
-.step-connector {
-  display: flex; align-items: center; gap: 12px;
-  padding: 16px 0; max-width: 500px; margin: 0 auto;
-}
-.connector-line { flex: 1; height: 1px; background: var(--border); }
-.connector-label { font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .remove-note {
+    background: #f9f5ef; border: 1px solid #ddd7cc; border-radius: 8px;
+    padding: 20px 24px; margin: 28px auto; max-width: 460px; text-align: left;
+  }
+  .remove-note-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .09em; color: #9c9088; margin-bottom: 8px; }
+  .remove-note p { font-size: 13.5px; color: #5a5248; line-height: 1.65; margin-bottom: 14px; }
 
-.arn-help {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 14px 18px;
-  margin-bottom: 20px;
-}
-.arn-help-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 6px; }
-.arn-help-body { font-size: 12.5px; color: var(--text); margin-bottom: 8px; }
-.arn-help-body strong { color: var(--white); }
-.arn-example { font-family: 'Courier New', monospace; font-size: 12px; color: var(--muted); }
-.arn-example em { color: var(--ember); font-style: normal; }
+  .success-note { font-size: 13px !important; color: #9c9088 !important; }
+  .success-note a { color: #b85e18; text-decoration: none; }
+  .success-note a:hover { text-decoration: underline; }
 
-.field { margin-bottom: 14px; }
-label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .06em; }
-input[type="text"] {
-  width: 100%; background: rgba(255,255,255,.04);
-  border: 1px solid var(--border); border-radius: 6px;
-  padding: 11px 14px; font-family: 'Courier New', monospace;
-  font-size: 13px; color: var(--white); outline: none;
-  transition: border-color .2s;
-}
-input[type="text"]::placeholder { color: var(--faint); }
-input[type="text"]:focus { border-color: var(--ember); }
+  .connect-footer { border-top: 1px solid #ddd7cc; padding: 24px 48px; background: #f5f0e8; }
+  .footer-inner { display: flex; align-items: center; gap: 16px; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 500; color: #5a5248; }
+  .footer-brand em { font-style: italic; }
+  .footer-copy { font-size: 12px; color: #9c9088; }
 
-.form-error { font-size: 13px; color: #e05540; margin-top: 10px; }
-
-#success-panel {
-  text-align: center;
-  padding: 80px 24px;
-}
-.success-icon {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--green-bg); border: 1px solid var(--green);
-  color: var(--green); font-size: 22px; line-height: 56px;
-  margin: 0 auto 24px; text-align: center;
-}
-#success-panel h2 {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 32px; font-weight: 400; color: var(--white);
-  margin-bottom: 16px;
-}
-#success-panel p { font-size: 15px; color: var(--muted); line-height: 1.65; max-width: 480px; margin: 0 auto 12px; }
-.success-note { font-size: 13px !important; }
-.success-note a { color: var(--ember); text-decoration: none; }
-
-footer {
-  border-top: 1px solid var(--border);
-  padding: 24px 48px;
-}
-.footer-inner { display: flex; align-items: center; }
-.footer-left { display: flex; align-items: center; gap: 16px; }
-.footer-brand { font-size: 14px; font-weight: 600; color: var(--text); }
-.footer-copy { font-size: 12px; color: var(--faint); }
-
-@media (max-width: 640px) {
-  .step-card { flex-direction: column; gap: 12px; padding: 24px 20px; }
-  .step-num { font-size: 32px; }
-  .connect-header h1 { font-size: 30px; }
-  .perm-grid { grid-template-columns: 1fr; }
-}
+  @media (max-width: 640px) {
+    .step-card { flex-direction: column; gap: 10px; padding: 24px 20px; }
+    .step-num { font-size: 36px; }
+    .connect-header h1 { font-size: 32px; }
+    .perm-grid { grid-template-columns: 1fr; }
+    .nav-inner { padding: 0 20px; }
+  }
 </style>
