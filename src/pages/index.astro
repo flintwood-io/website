@@ -3,19 +3,25 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Flintwood — SOC 2 Readiness for AWS">
 
+<!-- ─ GEM SVG SNIPPETS (reused inline below) ──────── -->
+
 <!-- ─ NAV ──────────────────────────────────────────── -->
 <nav>
 <div class="nav-inner">
   <a class="nav-logo" href="#">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <polygon points="16,2 30,21 16,30 2,21" fill="#c97030"/>
-      <polygon points="16,2 30,21 16,17" fill="#e8924a"/>
-      <circle cx="27.5" cy="7" r="2.4" fill="#f0b458"/>
+    <svg width="24" height="25" viewBox="0 0 46 48" fill="none" aria-hidden="true">
+      <polygon points="23,2 37,8 31,11"               fill="#f8c858"/>
+      <polygon points="37,8 43,22 33,26 31,11"        fill="#e08535"/>
+      <polygon points="43,22 37,40 23,46 15,33 33,26"  fill="#b06028"/>
+      <polygon points="23,46 9,40 15,33"              fill="#7a3818"/>
+      <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#4a200e"/>
+      <polygon points="23,2 26,5 23,7 20,5"           fill="#fff4cc"/>
     </svg>
-    <span class="logo-type">Flintwood</span>
+    <span class="logo-type">Flint<em>wood</em></span>
   </a>
   <ul class="nav-links">
     <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#ai-risk">AI Risk</a></li>
     <li><a href="#diff">Why Flintwood</a></li>
   </ul>
@@ -30,10 +36,10 @@ import Layout from '../layouts/Layout.astro';
 <section id="hero">
 <div class="hero-inner">
   <div class="hero-text">
-    <div class="hero-eyebrow">SOC 2 · AWS · AI/Agentic Risk</div>
-    <h1 class="hero-h1">Your next audit will<br>ask about your<br><em>AI stack.</em></h1>
-    <div class="hero-sub">We already checked.</div>
-    <p class="hero-body">Flintwood delivers automated monthly SOC 2 readiness reports for AWS — with a dedicated AI and agentic risk layer your auditor hasn't mapped yet.</p>
+    <div class="hero-eyebrow">SOC 2 Readiness · AWS · Monthly Reports</div>
+    <h1 class="hero-h1">Monthly SOC 2 readiness<br>reports for AWS —<br><span class="hero-h1-whisper">including your <em>AI stack.</em></span></h1>
+    <div class="hero-sub">We find the gaps before your auditor does.</div>
+    <p class="hero-body">One read-only IAM role. Monthly scans mapped to Trust Service Criteria — including Bedrock, SageMaker, and agentic Lambda risks standard tools miss. Human-reviewed. Auditor-ready.</p>
     <div class="hero-ctas">
       <a class="btn btn-lg" href="#contact">Request free pilot report</a>
       <a class="btn-outline" href="#how-it-works">See how it works →</a>
@@ -85,49 +91,33 @@ import Layout from '../layouts/Layout.astro';
 <div class="inner">
   <div class="signal-item reveal">
     <div class="signal-num">Monthly</div>
-    <div class="signal-lbl">Continuous readiness — not a one-time snapshot</div>
+    <div class="signal-lbl"><strong>Continuous readiness</strong>Not a one-time snapshot that ages out before your audit</div>
   </div>
   <div class="signal-item reveal d1">
     <div class="signal-num">5 days</div>
-    <div class="signal-lbl">First report delivered, free, no commitment</div>
+    <div class="signal-lbl"><strong>First report, free</strong>Delivered within 5 business days, no commitment required</div>
   </div>
   <div class="signal-item reveal d2">
     <div class="signal-num">Read-only</div>
-    <div class="signal-lbl">Single IAM role — nothing runs in your account</div>
+    <div class="signal-lbl"><strong>Zero footprint</strong>Single IAM role assumed monthly — nothing runs in your account</div>
   </div>
   <div class="signal-item reveal d3">
     <div class="signal-num">AI-native</div>
-    <div class="signal-lbl">Bedrock, SageMaker &amp; agentic Lambda risk layer</div>
+    <div class="signal-lbl"><strong>Built for your stack</strong>Bedrock, SageMaker &amp; agentic Lambda risk — mapped to TSC</div>
   </div>
 </div>
 </div>
 
-<!-- ─ WHAT SOC 2 ACTUALLY TESTS ─────────────────────── -->
-<section id="soc2-explainer">
-<div class="inner explainer-inner">
-  <div class="section-eyebrow reveal">Why it matters</div>
-  <h2 class="section-title reveal d1">SOC 2 isn't a checkbox.<br>It's 12 months of evidence.</h2>
-  <p class="explainer-body reveal d2">A SOC 2 Type II report proves your controls <em>operated effectively</em> over an audit period — typically the 12 months before your auditor shows up. Enterprise buyers require it. Their legal teams will ask for it before signing.<br><br>The controls they test are almost entirely in your AWS environment: who has access, what's logged, how changes are tracked. Most companies don't know their gaps until the auditor finds them. By then it's too late to fix — it's in the report.</p>
-
-  <div class="tsc-grid reveal d3">
-    <div class="tsc-item">
-      <div class="tsc-code">CC6 · Logical Access</div>
-      <div class="tsc-title">Who can access what, and when</div>
-      <div class="tsc-body">IAM policies, MFA enforcement, stale credentials, root account usage, least-privilege roles — the controls auditors spend the most time on.</div>
-    </div>
-    <div class="tsc-item">
-      <div class="tsc-code">CC7 · Monitoring</div>
-      <div class="tsc-title">What's logged and alerting</div>
-      <div class="tsc-body">CloudTrail coverage, GuardDuty, SecurityHub findings, S3 access logging — evidence that you know what's happening in your environment.</div>
-    </div>
-    <div class="tsc-item">
-      <div class="tsc-code">CC8 · Change Management</div>
-      <div class="tsc-title">How changes are controlled</div>
-      <div class="tsc-body">Config recorder, non-compliant rules, deployment approvals, change records — proof that your environment doesn't drift without oversight.</div>
-    </div>
-  </div>
+<!-- ─ ORNAMENT ──────────────────────────────────────── -->
+<div class="ornament-rule" aria-hidden="true">
+  <svg width="14" height="15" viewBox="0 0 46 48" fill="none">
+    <polygon points="23,2 37,8 31,11" fill="#b85e18"/>
+    <polygon points="37,8 43,22 33,26 31,11" fill="#b85e18"/>
+    <polygon points="43,22 37,40 23,46 15,33 33,26" fill="#b85e18"/>
+    <polygon points="23,46 9,40 15,33" fill="#b85e18"/>
+    <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#b85e18"/>
+  </svg>
 </div>
-</section>
 
 <!-- ─ HOW IT WORKS ──────────────────────────────────── -->
 <section id="how-it-works">
@@ -138,24 +128,113 @@ import Layout from '../layouts/Layout.astro';
     <div class="step reveal">
       <div class="step-n">01</div>
       <div class="step-title">Deploy a read-only IAM role</div>
-      <div class="step-body">Deploy a single read-only IAM role via one-click CloudFormation — no CLI, no local tooling. It opens in your AWS Console, pre-filled. Review the permissions, click Create Stack. We assume the role once a month, then disconnect.</div>
-      <div class="step-pill">One-click CloudFormation · 2 min · No CLI</div>
+      <div class="step-body">One read-only IAM role via CloudFormation or Terraform. Five minutes. We assume the role, scan, then disconnect — nothing runs in your account.</div>
+      <div class="step-pill">CloudFormation · Terraform · 5 min</div>
     </div>
     <div class="step reveal d1">
       <div class="step-n">02</div>
       <div class="step-title">We scan and map to SOC 2 TSC</div>
-      <div class="step-body">Every month we scan your environment and map every finding to Trust Service Criteria — CC6, CC7, CC8 — plus a dedicated layer covering your AI and agentic workloads.</div>
+      <div class="step-body">Monthly scans mapped to Trust Service Criteria — CC6, CC7, CC8 — with a dedicated layer for your AI and agentic workloads.</div>
       <div class="step-pill">TSC-mapped · AI risk layer · Month-over-month drift</div>
     </div>
     <div class="step reveal d2">
       <div class="step-n">03</div>
       <div class="step-title">Receive a human-reviewed report</div>
-      <div class="step-body">Every report is reviewed by a human before it reaches you. No raw scanner output. You get context, severity, and prioritized remediation — ready to share with your auditor.</div>
+      <div class="step-body">A human reviews every report before it reaches you. Context, severity, prioritized remediation — not raw scanner noise. Ready to hand to your auditor.</div>
       <div class="step-pill">Auditor-ready · Prioritized · No noise</div>
     </div>
   </div>
 </div>
 </section>
+
+<!-- ─ PRICING ───────────────────────────────────────── -->
+<section id="pricing">
+<div class="inner">
+  <div class="section-eyebrow reveal">Pricing</div>
+  <h2 class="section-title reveal d1" style="max-width:520px;margin-bottom:16px;">Start free. Stay only if it's useful.</h2>
+  <p class="pricing-sub reveal d2">No contracts. Cancel anytime. The free pilot is a real report — not a demo.</p>
+
+  <div class="pricing-grid reveal d2">
+    <div class="pricing-card">
+      <div class="pc-top">
+        <div class="pc-name">Pilot</div>
+        <div class="pc-price">Free</div>
+        <div class="pc-desc">One-time scan, no card required</div>
+      </div>
+      <ul class="pc-features">
+        <li>1 AWS account</li>
+        <li>One full readiness report</li>
+        <li>AI risk section included</li>
+        <li>Human-reviewed findings</li>
+        <li>Full PDF — auditor-ready</li>
+      </ul>
+      <a class="btn btn-outline pc-cta" href="mailto:hello@flintwood.io?subject=Pilot report request">Request free pilot →</a>
+    </div>
+
+    <div class="pricing-card pricing-card--featured">
+      <div class="pc-badge">Most popular</div>
+      <div class="pc-top">
+        <div class="pc-name">Starter</div>
+        <div class="pc-price">$299<span>/mo</span></div>
+        <div class="pc-desc">1–2 AWS accounts, billed monthly</div>
+      </div>
+      <ul class="pc-features">
+        <li>Up to 2 AWS accounts</li>
+        <li>Monthly scans, every account</li>
+        <li>AI risk layer included</li>
+        <li>Human-reviewed findings</li>
+        <li>Month-over-month drift tracking</li>
+        <li>Auditor-ready PDF report</li>
+      </ul>
+      <a class="btn pc-cta" href="mailto:hello@flintwood.io?subject=Starter plan">Get started →</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pc-top">
+        <div class="pc-name">Growth</div>
+        <div class="pc-price">$599<span>/mo</span></div>
+        <div class="pc-desc">Up to 5 AWS accounts, billed monthly</div>
+      </div>
+      <ul class="pc-features">
+        <li>Up to 5 AWS accounts</li>
+        <li>Monthly scans, every account</li>
+        <li>AI risk layer included</li>
+        <li>Human-reviewed findings</li>
+        <li>Month-over-month drift tracking</li>
+        <li>Auditor-ready PDF report</li>
+      </ul>
+      <a class="btn btn-outline pc-cta" href="mailto:hello@flintwood.io?subject=Growth plan">Get started →</a>
+    </div>
+  </div>
+
+  <div class="pricing-enterprise reveal">
+    <div class="pe-left">
+      <div>
+        <div class="pe-name">Enterprise</div>
+        <div class="pe-title">Unlimited accounts · Multi-region</div>
+      </div>
+      <ul class="pe-features">
+        <li>Custom account scope</li>
+        <li>Multi-region support</li>
+        <li>Dedicated analyst</li>
+        <li>SLA &amp; custom delivery</li>
+      </ul>
+    </div>
+    <a class="btn pe-cta" href="mailto:hello@flintwood.io?subject=Enterprise inquiry">Talk to us →</a>
+  </div>
+</div>
+</section>
+
+<!-- ─ ORNAMENT ──────────────────────────────────────── -->
+<div class="ornament-rule" style="background:var(--bg)" aria-hidden="true">
+  <svg width="14" height="15" viewBox="0 0 46 48" fill="none">
+    <polygon points="23,2 37,8 31,11" fill="#b85e18"/>
+    <polygon points="37,8 43,22 33,26 31,11" fill="#b85e18"/>
+    <polygon points="43,22 37,40 23,46 15,33 33,26" fill="#b85e18"/>
+    <polygon points="23,46 9,40 15,33" fill="#b85e18"/>
+    <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#b85e18"/>
+  </svg>
+</div>
 
 <!-- ─ AI RISK ────────────────────────────────────────── -->
 <section id="ai-risk">
@@ -164,7 +243,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="ai-text">
       <div class="section-eyebrow reveal">Flintwood exclusive</div>
       <h2 class="section-title reveal d1">The AI risk layer your auditor doesn't have a checklist for yet.</h2>
-      <p class="ai-body reveal d2">As your AI stack grows, so does your audit surface. Bedrock roles, autonomous Lambda chains, unlogged model invocations — none of this is in the standard SOC 2 playbook. We track it before your auditor asks about it.</p>
+      <p class="ai-body reveal d2">Your AI stack is growing. Your audit surface too. Bedrock roles, Lambda chains, unlogged invocations — none of it is in the standard SOC 2 playbook yet. We track it before your auditor asks.</p>
       <ul class="detect-list reveal d3">
         <li>Bedrock and SageMaker access control gaps</li>
         <li>Agentic IAM role over-permission detection</li>
@@ -212,6 +291,17 @@ import Layout from '../layouts/Layout.astro';
 </div>
 </section>
 
+<!-- ─ ORNAMENT ──────────────────────────────────────── -->
+<div class="ornament-rule" aria-hidden="true">
+  <svg width="14" height="15" viewBox="0 0 46 48" fill="none">
+    <polygon points="23,2 37,8 31,11" fill="#b85e18"/>
+    <polygon points="37,8 43,22 33,26 31,11" fill="#b85e18"/>
+    <polygon points="43,22 37,40 23,46 15,33 33,26" fill="#b85e18"/>
+    <polygon points="23,46 9,40 15,33" fill="#b85e18"/>
+    <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#b85e18"/>
+  </svg>
+</div>
+
 <!-- ─ WHY FLINTWOOD ─────────────────────────────────── -->
 <section id="diff">
 <div class="inner">
@@ -221,12 +311,12 @@ import Layout from '../layouts/Layout.astro';
     <div class="diff-item reveal">
       <div class="diff-num">Independent</div>
       <div class="diff-title">No cloud vendor agenda</div>
-      <div class="diff-body">Flintwood is cloud-neutral and AWS-only by design — not a feature of a larger platform with a quarterly roadmap you can't influence. Your readiness report is ours to obsess over.</div>
+      <div class="diff-body">AWS-only by design — not a feature of a larger platform with a roadmap you can't influence. Your readiness report is all we do.</div>
     </div>
     <div class="diff-item reveal d1">
       <div class="diff-num">Narrow scope</div>
       <div class="diff-title">SOC 2 + AWS + AI. That's it.</div>
-      <div class="diff-body">We don't sell you a 400-page CNAPP platform you'll use 10% of. We do one thing: monthly SOC 2 readiness for AWS, with an AI risk layer that no other tool has mapped yet.</div>
+      <div class="diff-body">No 400-page CNAPP platform you'll use 10% of. One thing: monthly SOC 2 readiness for AWS, with an AI risk layer no other tool has mapped yet.</div>
     </div>
     <div class="diff-item reveal d2">
       <div class="diff-num">Human reviewed</div>
@@ -237,115 +327,12 @@ import Layout from '../layouts/Layout.astro';
 </div>
 </section>
 
-<!-- ─ FAQ ────────────────────────────────────────────── -->
-<section id="faq">
-<div class="inner">
-  <div class="section-eyebrow reveal">Common questions</div>
-  <h2 class="section-title reveal d1" style="max-width:560px;margin-bottom:48px;">Everything you need to know before connecting your AWS account.</h2>
-
-  <div class="faq-grid">
-    <div class="faq-item reveal">
-      <div class="faq-q">How does AWS access work? Do I need to install anything?</div>
-      <div class="faq-a">No. You deploy a read-only IAM role using a one-click CloudFormation button — it opens directly in your AWS Console, pre-filled. You review the exact permissions, click "Create Stack," and it's done in under 2 minutes. No CLI, no credentials to configure, nothing to install.</div>
-    </div>
-    <div class="faq-item reveal d1">
-      <div class="faq-q">What can Flintwood see in my AWS account?</div>
-      <div class="faq-a">Configuration metadata only — IAM policies, CloudTrail trails, GuardDuty findings, Config rules, S3 bucket policies, Lambda configurations, and Bedrock role permissions. We do not access S3 object contents, databases, application secrets, or any customer data stored in your account.</div>
-    </div>
-    <div class="faq-item reveal d2">
-      <div class="faq-q">Is it safe to give a third party read-only access?</div>
-      <div class="faq-a">You deploy the role — you control it. Every access we make appears in your CloudTrail logs. You can revoke access instantly by deleting the IAM role or CloudFormation stack — no support ticket, no offboarding process. This is the same pattern used by Wiz, Datadog, Lacework, and every major AWS security vendor.</div>
-    </div>
-    <div class="faq-item reveal d3">
-      <div class="faq-q">Does this affect my SOC 2 compliance?</div>
-      <div class="faq-a">It helps it. Our access is read-only, scoped to specific services, and logged in CloudTrail — that's CC7 evidence you're generating automatically. Auditors treat documented third-party security assessment access as a positive control signal. We provide a Data Processing Agreement on request at hello@flintwood.io that describes exactly what we access and how we handle it.</div>
-    </div>
-    <div class="faq-item reveal faq-full">
-      <div class="faq-q">How do I revoke access?</div>
-      <div class="faq-a">Delete the CloudFormation stack (or the IAM role directly) from your AWS Console. Access is revoked instantly — we can no longer assume the role. Nothing else required.</div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ─ SAMPLE REPORT ──────────────────────────────────── -->
-<section id="sample-report">
-<div class="inner">
-  <div class="sample-grid">
-    <div class="sample-text">
-      <div class="section-eyebrow reveal">Sample report</div>
-      <h2 class="section-title reveal d1">See exactly what you'd receive.</h2>
-      <p class="sample-body reveal d2">Every Flintwood report covers your full AWS control posture — CC6 access, CC7 monitoring, CC8 change management — plus a dedicated AI risk section your auditor hasn't seen before. Human-reviewed before it reaches you.</p>
-      <div class="reveal d3">
-        <a class="btn btn-lg" href="/sample-report.pdf" target="_blank" rel="noopener">Download sample report (PDF) ↓</a>
-        <p class="sample-note">Fictional data · Covers a real finding set · Same template as production reports</p>
-      </div>
-    </div>
-
-    <div class="sample-card-wrap reveal">
-      <div class="sample-card">
-        <!-- Cover strip -->
-        <div class="sc-cover">
-          <div class="sc-cover-left">
-            <div class="sc-label">SOC 2 Readiness Report</div>
-            <div class="sc-customer">Acme Corp · AWS us-east-1</div>
-            <div class="sc-date">May 2026</div>
-          </div>
-          <div class="sc-score-badge">
-            <div class="sc-score-num">71</div>
-            <div class="sc-score-sub">/ 100</div>
-          </div>
-        </div>
-
-        <!-- Findings summary -->
-        <div class="sc-summary">
-          <div class="sc-summary-label">Findings</div>
-          <div class="sc-stat-grid">
-            <div class="sc-stat crit">
-              <div class="sc-stat-num">2</div>
-              <div class="sc-stat-lbl">Critical</div>
-            </div>
-            <div class="sc-stat high">
-              <div class="sc-stat-num">4</div>
-              <div class="sc-stat-lbl">High</div>
-            </div>
-            <div class="sc-stat med">
-              <div class="sc-stat-num">4</div>
-              <div class="sc-stat-lbl">Medium</div>
-            </div>
-            <div class="sc-stat low">
-              <div class="sc-stat-num">2</div>
-              <div class="sc-stat-lbl">Low</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- AI risk callout -->
-        <div class="sc-ai">
-          <div class="sc-ai-head">
-            <span class="badge crit">Critical</span>
-            <span class="tsc">CC6.1 · Logical Access</span>
-          </div>
-          <div class="ai-card-title">Over-permissioned Bedrock agent role</div>
-          <div class="ai-card-desc" style="margin-top:4px;">Role <code>bedrock-agent-prod</code> has <code>bedrock:InvokeModel</code> on <code>*</code> with S3 write — no MFA condition.</div>
-        </div>
-
-        <div class="sc-footer">
-          <span>12 findings · AI risk section included</span>
-          <span class="ok">Human-reviewed ✓</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
 <!-- ─ CTA ───────────────────────────────────────────── -->
 <section id="contact">
 <div class="inner">
   <div class="cta-eyebrow">Free pilot</div>
   <h2 class="cta-title reveal">First report free.<br>No commitment.</h2>
-  <p class="cta-body reveal d1">We'll scan your AWS environment and deliver a full SOC 2 readiness report — including AI risk findings — within 5 business days. No strings.</p>
+  <p class="cta-body reveal d1">Full SOC 2 readiness report — AI risk findings included — delivered within 5 business days. No strings, no card required.</p>
 
   <div id="signup-wrap" class="reveal d2">
     <form id="signup-form" class="signup-form">
@@ -366,19 +353,44 @@ import Layout from '../layouts/Layout.astro';
 </div>
 </section>
 
+<!-- ─ MERCH STRIP ────────────────────────────────────── -->
+<section id="merch">
+<div class="inner">
+  <div class="merch-strip reveal">
+    <svg class="merch-gem-small" width="22" height="23" viewBox="0 0 46 48" fill="none" aria-hidden="true">
+      <polygon points="23,2 37,8 31,11" fill="#f8c858"/>
+      <polygon points="37,8 43,22 33,26 31,11" fill="#e08535"/>
+      <polygon points="43,22 37,40 23,46 15,33 33,26" fill="#b06028"/>
+      <polygon points="23,46 9,40 15,33" fill="#7a3818"/>
+      <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#4a200e"/>
+    </svg>
+    <div class="merch-quotes">
+      <span class="mq">"We already checked."</span>
+      <span class="mq-sep">—</span>
+      <span class="mq">"Your AI stack is showing."</span>
+      <span class="mq-sep">—</span>
+      <span class="mq">"Strike first."</span>
+    </div>
+    <div class="merch-aside">things we printed on shirts while waiting for our auditor</div>
+  </div>
+</div>
+</section>
+
 <!-- ─ FOOTER ────────────────────────────────────────── -->
 <footer>
 <div class="footer-inner">
   <div class="footer-left">
     <a class="nav-logo" href="#" style="text-decoration:none;">
-      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <polygon points="16,2 30,21 16,30 2,21" fill="#c97030"/>
-        <polygon points="16,2 30,21 16,17" fill="#e8924a"/>
-        <circle cx="27.5" cy="7" r="2.4" fill="#f0b458"/>
+      <svg width="20" height="21" viewBox="0 0 46 48" fill="none" aria-hidden="true">
+        <polygon points="23,2 37,8 31,11"               fill="#f8c858"/>
+        <polygon points="37,8 43,22 33,26 31,11"        fill="#e08535"/>
+        <polygon points="43,22 37,40 23,46 15,33 33,26"  fill="#b06028"/>
+        <polygon points="23,46 9,40 15,33"              fill="#7a3818"/>
+        <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#4a200e"/>
       </svg>
-      <span class="logo-type" style="font-size:14px;">Flintwood</span>
+      <span class="logo-type" style="font-size:18px;color:#f5f0e8;">Flint<em>wood</em></span>
     </a>
-    <span class="footer-copy">© 2026 Flintwood LLC · <a href="mailto:hello@flintwood.io" style="color:inherit;">hello@flintwood.io</a></span>
+    <span class="footer-copy">© 2026 Flintwood LLC · <a href="mailto:hello@flintwood.io">hello@flintwood.io</a></span>
   </div>
   <ul class="footer-links">
     <li><a href="#how-it-works">How it works</a></li>
@@ -388,7 +400,21 @@ import Layout from '../layouts/Layout.astro';
 </div>
 </footer>
 
+<!-- ─ GHOST GEM WATERMARK ───────────────────────────── -->
+<svg class="hero-bg-gem" viewBox="0 0 46 48" fill="none" aria-hidden="true">
+  <polygon points="23,2 37,8 31,11"               fill="#b85e18"/>
+  <polygon points="37,8 43,22 33,26 31,11"        fill="#b85e18"/>
+  <polygon points="43,22 37,40 23,46 15,33 33,26"  fill="#b85e18"/>
+  <polygon points="23,46 9,40 15,33"              fill="#b85e18"/>
+  <polygon points="9,40 3,22 9,8 23,2 31,11 33,26 15,33" fill="#b85e18"/>
+  <polygon points="23,2 26,5 23,7 20,5"           fill="#f0c840"/>
+</svg>
+
+<!-- ─ GRAIN OVERLAY ──────────────────────────────────── -->
+<div class="grain" aria-hidden="true"></div>
+
 <script>
+// Scroll reveal
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.08 });
@@ -405,11 +431,9 @@ signupForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const name = document.getElementById('signup-name').value.trim();
   const email = document.getElementById('signup-email').value.trim();
-
   signupBtn.disabled = true;
   signupBtn.textContent = 'Sending…';
   signupError.style.display = 'none';
-
   try {
     const res = await fetch(SIGNUP_URL, {
       method: 'POST',
@@ -438,273 +462,416 @@ signupForm.addEventListener('submit', async (e) => {
 </Layout>
 
 <style>
-/* ─── MAX WIDTH CONTAINER ─────────────────────────── */
+/* ─── CONTAINER ───────────────────────────────────── */
 .inner { max-width: 1200px; margin: 0 auto; width: 100%; }
 
 /* ─── NAV ─────────────────────────────────────────── */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(13,12,10,0.88);
+  background: rgba(26,22,18,0.97);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,.07);
 }
 .nav-inner {
   max-width: 1200px; margin: 0 auto;
   padding: 0 48px; height: 62px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); }
-.logo-type { font-size: 15px; font-weight: 600; letter-spacing: 0.01em; }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #f5f0e8; }
+.logo-type { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; letter-spacing: .01em; line-height: 1; }
+.logo-type em { font-style: italic; font-weight: 400; }
 .nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a { font-size: 13.5px; color: var(--muted); text-decoration: none; transition: color .2s; }
-.nav-links a:hover { color: var(--text); }
+.nav-links a { font-size: 13.5px; color: rgba(245,240,232,.5); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: rgba(245,240,232,.9); }
 .nav-end { display: flex; align-items: center; gap: 20px; }
-.nav-contact { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s; }
-.nav-contact:hover { color: var(--text); }
+.nav-contact { font-size: 13px; color: rgba(245,240,232,.5); text-decoration: none; transition: color .2s; }
+.nav-contact:hover { color: rgba(245,240,232,.9); }
+
+/* ─── BUTTONS ─────────────────────────────────────── */
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
-  background: var(--ember); color: var(--white);
-  font-family: 'DM Sans', sans-serif; font-size: 13.5px; font-weight: 500;
+  background: var(--ember); color: var(--btn-text);
+  font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 500;
   padding: 9px 20px; border-radius: 6px; text-decoration: none;
-  transition: background .2s;
+  transition: background .2s; border: none; cursor: pointer;
 }
 .btn:hover { background: var(--ember-lt); }
 .btn-lg { font-size: 15px; padding: 14px 30px; border-radius: 7px; }
 .btn-outline {
+  display: inline-flex; align-items: center;
   background: transparent; border: 1px solid var(--border2);
-  color: var(--muted); font-family: 'DM Sans', sans-serif;
+  color: var(--muted); font-family: 'IBM Plex Sans', sans-serif;
   font-size: 14px; font-weight: 400; padding: 13px 24px;
   border-radius: 7px; text-decoration: none; transition: all .2s;
 }
-.btn-outline:hover { border-color: var(--muted); color: var(--text); }
+.btn-outline:hover { border-color: var(--text); color: var(--text); }
 
 /* ─── HERO ────────────────────────────────────────── */
-#hero { padding: 96px 48px; min-height: calc(100vh - 62px); position: relative; overflow: hidden; }
+#hero {
+  min-height: calc(100vh - 62px);
+  position: relative; overflow: hidden;
+  padding: 96px 48px;
+}
 #hero::after {
   content: ''; position: absolute; top: -160px; right: -80px;
   width: 700px; height: 700px;
-  background: radial-gradient(ellipse, rgba(201,112,48,.07) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(185,94,24,.05) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero-inner {
-  max-width: 1200px; margin: 0 auto;
+  max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
   display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px;
 }
 .hero-eyebrow {
   display: flex; align-items: center; gap: 10px;
-  font-size: 11px; font-weight: 500; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ember-lt); margin-bottom: 30px;
+  font-size: 12px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ember); margin-bottom: 30px;
   opacity: 0; animation: rise .55s ease .05s forwards;
 }
 .hero-eyebrow::before { content: ''; display: inline-block; width: 22px; height: 1px; background: var(--ember); }
 h1.hero-h1 {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(42px, 4.5vw, 66px);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(50px, 5.2vw, 78px);
   font-weight: 400; line-height: 1.08; letter-spacing: -.025em;
-  color: var(--white); margin-bottom: 20px;
+  color: var(--heading); margin-bottom: 20px;
   opacity: 0; animation: rise .6s ease .12s forwards;
 }
-h1.hero-h1 em { font-style: italic; color: var(--ember-lt); }
+h1.hero-h1 em { font-style: italic; color: var(--ember); }
+.hero-h1-whisper {
+  display: block; font-size: .72em; line-height: 1.2;
+  margin-top: .1em; letter-spacing: -.01em;
+}
 .hero-sub {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(22px, 2.5vw, 34px); font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 40px); font-style: italic; font-weight: 400;
   color: var(--muted); line-height: 1.2; margin-bottom: 30px;
   opacity: 0; animation: rise .6s ease .2s forwards;
 }
 .hero-body {
-  font-size: 15px; line-height: 1.72; color: var(--muted);
+  font-size: 16px; line-height: 1.75; color: var(--muted);
   max-width: 440px; margin-bottom: 44px;
   opacity: 0; animation: rise .6s ease .28s forwards;
 }
-.hero-ctas { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; opacity: 0; animation: rise .6s ease .36s forwards; }
+.hero-ctas {
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  opacity: 0; animation: rise .6s ease .36s forwards;
+}
+.hero-visual { position: relative; z-index: 1; opacity: 0; animation: fadein .8s ease .5s forwards; }
 
 /* ─── REPORT CARD ─────────────────────────────────── */
-.hero-visual { position: relative; z-index: 1; opacity: 0; animation: fadein .8s ease .5s forwards; }
 .report-card {
-  background: var(--surface); border: 1px solid var(--border2); border-radius: 14px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
   padding: 28px 28px 22px;
-  box-shadow: 0 48px 96px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.04);
-  animation: float 7s ease-in-out infinite; max-width: 420px; margin: 0 auto; font-size: 13px;
+  box-shadow: 0 24px 64px rgba(28,24,20,.10), 0 4px 16px rgba(28,24,20,.06);
+  animation: float 7s ease-in-out infinite;
+  max-width: 420px; margin: 0 auto; font-size: 13px;
 }
-.rc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
-.rc-title { font-size: 10.5px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
-.rc-period { font-size: 12px; color: var(--white); font-weight: 500; margin-top: 4px; }
-.rc-badge { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 4px 9px; border-radius: 20px; background: rgba(90,158,106,.15); color: var(--green); }
+.rc-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
+}
+.rc-title { font-size: 12px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--faint); }
+.rc-period { font-size: 13px; color: var(--heading); font-weight: 500; margin-top: 4px; }
+.rc-badge {
+  font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 20px; background: rgba(42,112,64,.1); color: var(--green);
+}
 .score-block { margin-bottom: 22px; }
-.score-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--faint); margin-bottom: 10px; }
+.score-lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: var(--faint); margin-bottom: 10px; }
 .score-row { display: flex; align-items: center; gap: 18px; }
-.score-num { font-family: 'Instrument Serif', serif; font-size: 52px; color: var(--white); line-height: 1; }
+.score-num { font-family: 'Cormorant Garamond', serif; font-size: 60px; color: var(--heading); line-height: 1; }
 .score-meta { flex: 1; }
-.score-track { height: 5px; background: var(--bg); border-radius: 3px; overflow: hidden; margin-bottom: 7px; }
+.score-track { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 7px; }
 .score-fill { height: 100%; width: 74%; background: linear-gradient(90deg, var(--ember), var(--ember-br)); border-radius: 3px; }
-.score-note { font-size: 11px; color: var(--green); }
-.finding { background: var(--bg2); border: 1px solid var(--border); border-radius: 7px; padding: 11px 13px; margin-bottom: 8px; }
+.score-note { font-size: 12.5px; color: var(--green); }
+.finding {
+  background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--border);
+  border-radius: 7px; padding: 11px 13px; margin-bottom: 8px;
+}
 .finding:last-of-type { margin-bottom: 0; }
-.f-sev { display: inline-flex; align-items: center; font-size: 9px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; margin-bottom: 6px; }
-.f-sev.crit { background: rgba(192,80,64,.15); color: #d06458; }
-.f-sev.high { background: rgba(201,112,48,.15); color: var(--ember-lt); }
-.f-sev.med  { background: rgba(184,152,42,.12); color: #c4a840; }
-.f-text { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.finding:has(.f-sev.crit) { border-left-color: var(--red); }
+.finding:has(.f-sev.high) { border-left-color: var(--ember); }
+.finding:has(.f-sev.med)  { border-left-color: var(--yellow); }
+.f-sev {
+  display: inline-flex; align-items: center;
+  font-size: 10px; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; padding: 2px 7px; border-radius: 3px; margin-bottom: 6px;
+}
+.f-sev.crit { background: rgba(176,40,24,.10); color: var(--red); }
+.f-sev.high { background: rgba(185,94,24,.12); color: var(--ember); }
+.f-sev.med  { background: rgba(132,96,16,.10); color: var(--yellow); }
+.f-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
 .f-text strong { color: var(--text); font-weight: 500; }
-.f-text code { font-size: 11px; color: var(--ember-lt); font-family: 'SF Mono','Fira Mono',monospace; }
-.rc-footer { display: flex; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--faint); }
-.rc-footer span.ok { color: var(--ember-lt); font-weight: 500; }
+.f-text code { font-size: 12px; color: var(--ember); font-family: 'SF Mono','Fira Mono',monospace; }
+.rc-footer {
+  display: flex; justify-content: space-between;
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 12.5px; color: var(--faint);
+}
+.rc-footer span.ok { color: var(--ember); font-weight: 500; }
 
 /* ─── SIGNAL BAR ──────────────────────────────────── */
-.signal-bar { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.signal-bar {
+  background: var(--surface);
+  border-top: 2px solid var(--ember);
+  border-bottom: 1px solid var(--border);
+}
 .signal-bar .inner { display: grid; grid-template-columns: repeat(4,1fr); }
-.signal-item { padding: 28px 40px; border-right: 1px solid var(--border); }
+.signal-item { padding: 48px 40px 44px; border-right: 1px solid var(--border); }
 .signal-item:last-child { border-right: none; }
-.signal-num { font-family: 'Instrument Serif', serif; font-size: 30px; color: var(--white); line-height: 1; margin-bottom: 6px; }
-.signal-lbl { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+.signal-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px; color: var(--heading); line-height: 1;
+  letter-spacing: -.02em; margin-bottom: 12px;
+}
+.signal-lbl { font-size: 13px; color: var(--muted); line-height: 1.55; }
+.signal-lbl strong { display: block; font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+
+/* ─── ORNAMENT DIVIDER ────────────────────────────── */
+.ornament-rule {
+  display: flex; align-items: center; gap: 18px;
+  padding: 0 48px; height: 48px;
+  background: var(--bg2);
+}
+.ornament-rule::before, .ornament-rule::after {
+  content: ''; flex: 1; height: 1px;
+}
+.ornament-rule::before { background: linear-gradient(90deg, transparent, var(--border)); }
+.ornament-rule::after  { background: linear-gradient(90deg, var(--border), transparent); }
+.ornament-rule svg { opacity: 0.3; flex-shrink: 0; }
 
 /* ─── SECTION SHARED ──────────────────────────────── */
 .section-eyebrow {
   display: flex; align-items: center; gap: 10px;
-  font-size: 11px; font-weight: 500; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ember-lt); margin-bottom: 18px;
+  font-size: 11.5px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ember); margin-bottom: 18px;
 }
 .section-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--ember); }
 .section-title {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 400; line-height: 1.12; letter-spacing: -.02em; color: var(--white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 400; line-height: 1.12; letter-spacing: -.02em;
+  color: var(--heading);
 }
-
-/* ─── SOC2 EXPLAINER ──────────────────────────────── */
-#soc2-explainer {
-  padding: 100px 48px;
-  border-top: 1px solid var(--border);
-}
-.explainer-inner { max-width: 860px; }
-.explainer-body {
-  font-size: 15px; color: var(--muted); line-height: 1.78;
-  margin: 28px 0 52px;
-}
-.explainer-body em { font-style: italic; color: var(--text); }
-.tsc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
-.tsc-item { }
-.tsc-code { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ember-lt); margin-bottom: 10px; }
-.tsc-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; letter-spacing: -.01em; }
-.tsc-body { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
 
 /* ─── HOW IT WORKS ────────────────────────────────── */
-#how-it-works { padding: 100px 48px; background: var(--bg2); border-top: 1px solid var(--border); }
+#how-it-works {
+  padding: 100px 48px;
+  background-color: var(--bg2);
+  background-image: repeating-linear-gradient(180deg, transparent, transparent 58px, rgba(155,138,118,.055) 58px, rgba(155,138,118,.055) 59px);
+  border-top: 1px solid var(--border);
+}
 #how-it-works .section-title { max-width: 480px; margin-bottom: 60px; }
 .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
-.step { background: var(--surface); padding: 38px 32px; }
-.step-n { font-family: 'Instrument Serif', serif; font-size: 52px; color: var(--border2); line-height: 1; margin-bottom: 26px; }
-.step-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 10px; letter-spacing: -.01em; }
+.step {
+  background: linear-gradient(170deg, #ffffff 55%, #fdf6ee 100%);
+  padding: 38px 32px;
+}
+.step-n { font-family: 'Cormorant Garamond', serif; font-size: 60px; color: var(--border); line-height: 1; margin-bottom: 26px; }
+.step-title { font-size: 16px; font-weight: 600; color: var(--heading); margin-bottom: 10px; letter-spacing: -.01em; }
 .step-body { font-size: 13.5px; color: var(--muted); line-height: 1.68; }
-.step-pill { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 11.5px; color: var(--faint); background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 11px; }
+.step-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 18px; font-size: 12.5px; color: var(--faint);
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 5px 11px;
+}
+
+/* ─── PRICING ─────────────────────────────────────── */
+#pricing {
+  padding: 100px 48px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.pricing-sub { font-size: 16px; color: var(--muted); line-height: 1.6; max-width: 460px; margin-bottom: 56px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-bottom: 2px; }
+.pricing-card {
+  background: var(--surface); padding: 40px 36px;
+  position: relative; display: flex; flex-direction: column;
+}
+.pricing-card--featured {
+  background: #fffdf9; border-top: 3px solid var(--ember);
+  box-shadow: 0 8px 40px rgba(184,94,24,.10), 0 2px 8px rgba(28,24,20,.06);
+  z-index: 1;
+}
+.pc-badge {
+  position: absolute; top: -1px; left: 36px;
+  font-size: 10px; font-weight: 600; letter-spacing: .10em; text-transform: uppercase;
+  background: var(--ember); color: #fdfaf5; padding: 3px 10px; border-radius: 0 0 4px 4px;
+}
+.pc-top { margin-bottom: 32px; }
+.pc-name { font-size: 11.5px; font-weight: 500; letter-spacing: .10em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+.pc-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-weight: 500; line-height: 1;
+  letter-spacing: -.02em; color: var(--heading); margin-bottom: 8px;
+}
+.pc-price span { font-size: 20px; color: var(--faint); font-weight: 400; }
+.pc-desc { font-size: 13px; color: var(--faint); }
+.pc-features {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 10px; flex: 1; margin-bottom: 36px;
+}
+.pc-features li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13.5px; color: var(--muted);
+}
+.pc-features li::before { content: ''; width: 14px; height: 1px; background: var(--border2); flex-shrink: 0; }
+.pricing-card--featured .pc-features li { color: var(--text); }
+.pricing-card--featured .pc-features li::before { background: var(--ember); }
+.pc-cta { margin-top: auto; text-align: center; justify-content: center; }
+.pricing-card--featured .pc-cta:hover { background: var(--ember-lt); }
+.pricing-enterprise {
+  background: var(--surface2); border: 1px solid var(--border);
+  padding: 28px 36px;
+  display: flex; align-items: center; justify-content: space-between; gap: 40px;
+}
+.pe-left { display: flex; align-items: center; gap: 28px; }
+.pe-name { font-size: 11.5px; font-weight: 500; letter-spacing: .10em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
+.pe-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--heading); line-height: 1; }
+.pe-features { display: flex; gap: 28px; flex-wrap: wrap; list-style: none; }
+.pe-features li {
+  font-size: 13px; color: var(--muted);
+  display: flex; align-items: center; gap: 8px;
+}
+.pe-features li::before { content: ''; width: 10px; height: 1px; background: var(--ember); flex-shrink: 0; }
+.pe-cta {
+  flex-shrink: 0; background: transparent;
+  border: 1px solid var(--border2); color: var(--muted);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13.5px; font-weight: 500;
+  padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: all .2s;
+}
+.pe-cta:hover { border-color: var(--ember); color: var(--ember); }
 
 /* ─── AI RISK ─────────────────────────────────────── */
-#ai-risk { padding: 100px 48px; border-top: 1px solid var(--border); }
+#ai-risk {
+  padding: 100px 48px;
+  background-color: var(--bg);
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 36px, rgba(155,138,118,.028) 36px, rgba(155,138,118,.028) 37px);
+  border-top: 1px solid var(--border);
+}
 .ai-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
 .ai-text .section-title { margin-bottom: 20px; }
-.ai-body { font-size: 14.5px; color: var(--muted); line-height: 1.72; margin-bottom: 36px; }
+.ai-body { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
 .detect-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
 .detect-list li { display: flex; align-items: center; gap: 12px; font-size: 13.5px; color: var(--muted); }
 .detect-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
 .cards-col { display: flex; flex-direction: column; gap: 10px; }
-.ai-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; transition: border-color .2s; }
-.ai-card:hover { border-color: var(--border2); }
+.ai-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; transition: border-color .2s, box-shadow .2s; }
+.ai-card:hover { border-color: var(--border2); box-shadow: 0 4px 16px rgba(28,24,20,.06); }
 .ai-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
-.tsc { font-size: 9.5px; color: var(--faint); background: var(--bg2); border: 1px solid var(--border); padding: 3px 8px; border-radius: 3px; letter-spacing: .04em; }
-.ai-card-title { font-size: 13.5px; font-weight: 500; color: var(--white); margin-bottom: 5px; line-height: 1.4; }
-.ai-card-desc { font-size: 12.5px; color: var(--muted); line-height: 1.58; }
-.ai-card-desc code { font-size: 11px; color: var(--ember-lt); font-family: 'SF Mono','Fira Mono',monospace; }
-.badge { font-size: 9px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
-.badge.crit { background: rgba(192,80,64,.14); color: #d06458; }
-.badge.high { background: rgba(201,112,48,.14); color: var(--ember-lt); }
-.badge.med  { background: rgba(184,152,42,.12); color: #c4a840; }
+.tsc { font-size: 11.5px; color: var(--faint); background: var(--bg2); border: 1px solid var(--border); padding: 3px 8px; border-radius: 3px; letter-spacing: .04em; }
+.ai-card-title { font-size: 13.5px; font-weight: 500; color: var(--heading); margin-bottom: 5px; line-height: 1.4; }
+.ai-card-desc { font-size: 13px; color: var(--muted); line-height: 1.62; }
+.ai-card-desc code { font-size: 12px; color: var(--ember); font-family: 'SF Mono','Fira Mono',monospace; }
+.badge { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
+.badge.crit { background: rgba(176,40,24,.10); color: var(--red); }
+.badge.high { background: rgba(185,94,24,.12); color: var(--ember); }
+.badge.med  { background: rgba(132,96,16,.10); color: var(--yellow); }
 
 /* ─── WHY FLINTWOOD ───────────────────────────────── */
-#diff { padding: 80px 48px; background: var(--surface); border-top: 1px solid var(--border); }
-.diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
-.diff-num { font-family: 'Instrument Serif', serif; font-size: 13px; font-style: italic; color: var(--ember-lt); margin-bottom: 10px; }
-.diff-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; letter-spacing: -.01em; }
+#diff {
+  padding: 80px 48px;
+  background-color: var(--surface);
+  background-image:
+    repeating-linear-gradient(0deg,  rgba(155,138,118,.03) 0, rgba(155,138,118,.03) 1px, transparent 1px, transparent 54px),
+    repeating-linear-gradient(90deg, rgba(155,138,118,.03) 0, rgba(155,138,118,.03) 1px, transparent 1px, transparent 54px);
+  border-top: 1px solid var(--border);
+}
+.diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; }
+.diff-item { border-top: 1px solid var(--border); padding-top: 28px; position: relative; }
+.diff-item::before { content: ''; position: absolute; top: -1px; left: 0; width: 40px; height: 2px; background: var(--ember); }
+.diff-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px; font-style: italic; font-weight: 400;
+  color: rgba(184,94,24,.10); line-height: .85; margin-bottom: 12px; letter-spacing: -.03em;
+}
+.diff-title { font-size: 15px; font-weight: 600; color: var(--heading); margin-bottom: 10px; letter-spacing: -.01em; }
 .diff-body { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
 
-/* ─── FAQ ─────────────────────────────────────────── */
-#faq { padding: 80px 48px; background: var(--bg); border-top: 1px solid var(--border); }
-#faq .section-title { margin-bottom: 0; }
-.faq-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
-}
-.faq-item { padding: 28px 32px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.faq-item:nth-child(2n) { border-right: none; }
-.faq-item:nth-last-child(-n+2) { border-bottom: none; }
-.faq-full { grid-column: 1 / -1; border-right: none; border-bottom: none; }
-.faq-q { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 10px; line-height: 1.4; letter-spacing: -.01em; }
-.faq-a { font-size: 13.5px; color: var(--muted); line-height: 1.68; }
-
-/* ─── SAMPLE REPORT ───────────────────────────────── */
-#sample-report { padding: 100px 48px; background: var(--bg2); border-top: 1px solid var(--border); }
-.sample-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.sample-text .section-title { margin-bottom: 20px; }
-.sample-body { font-size: 14.5px; color: var(--muted); line-height: 1.72; margin-bottom: 36px; }
-.sample-note { font-size: 12px; color: var(--faint); margin-top: 14px; }
-.sample-card-wrap { }
-.sample-card {
-  background: var(--surface); border: 1px solid var(--border2); border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 48px 96px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.04);
-  animation: float 7s ease-in-out infinite 1s;
-  font-size: 13px;
-}
-.sc-cover { display: flex; align-items: center; justify-content: space-between; padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid var(--border); }
-.sc-label { font-size: 9.5px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
-.sc-customer { font-size: 13px; font-weight: 500; color: var(--white); margin-bottom: 3px; }
-.sc-date { font-size: 11px; color: var(--faint); }
-.sc-score-badge { text-align: center; }
-.sc-score-num { font-family: 'Instrument Serif', serif; font-size: 44px; color: var(--white); line-height: 1; }
-.sc-score-sub { font-size: 11px; color: var(--faint); }
-.sc-summary { margin-bottom: 16px; }
-.sc-summary-label { font-size: 9px; text-transform: uppercase; letter-spacing: .09em; color: var(--faint); margin-bottom: 10px; }
-.sc-stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
-.sc-stat { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 10px 8px; text-align: center; }
-.sc-stat-num { font-size: 20px; font-weight: 600; line-height: 1; margin-bottom: 3px; }
-.sc-stat-lbl { font-size: 9px; color: var(--faint); text-transform: uppercase; letter-spacing: .06em; }
-.sc-stat.crit .sc-stat-num { color: #d06458; }
-.sc-stat.high .sc-stat-num { color: var(--ember-lt); }
-.sc-stat.med  .sc-stat-num { color: #c4a840; }
-.sc-stat.low  .sc-stat-num { color: var(--green); }
-.sc-ai { background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 12px 14px; margin-bottom: 14px; }
-.sc-ai-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-.sc-footer { display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--faint); }
-.sc-footer span.ok { color: var(--ember-lt); font-weight: 500; }
-
 /* ─── CTA ─────────────────────────────────────────── */
-#contact { padding: 120px 48px; background: var(--bg2); border-top: 1px solid var(--border); text-align: center; }
+#contact {
+  padding: 120px 48px;
+  background: var(--heading);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.cta-eyebrow { font-size: 11.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ember-br); margin-bottom: 20px; }
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 4.5vw, 62px);
+  font-weight: 400; line-height: 1.12; letter-spacing: -.025em;
+  color: #f5f0e8; margin-bottom: 18px;
+}
+.cta-body { font-size: 15px; color: rgba(245,240,232,.65); line-height: 1.7; max-width: 460px; margin: 0 auto 44px; }
+.cta-note { font-size: 13px; color: rgba(245,240,232,.4); margin-top: 20px; }
+
+/* ─── SIGNUP FORM ─────────────────────────────────── */
 .signup-form { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .signup-fields { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: center; }
 .signup-fields input {
-  background: rgba(255,255,255,.06); border: 1px solid var(--border);
-  border-radius: 7px; padding: 12px 16px; font-size: 14px; color: var(--white);
-  font-family: 'DM Sans', sans-serif; width: 200px; outline: none; transition: border-color .2s;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(245,240,232,.2);
+  border-radius: 7px; padding: 12px 16px; font-size: 14px; color: #f5f0e8;
+  font-family: 'IBM Plex Sans', sans-serif; width: 200px; outline: none; transition: border-color .2s;
 }
-.signup-fields input::placeholder { color: var(--muted); }
+.signup-fields input::placeholder { color: rgba(245,240,232,.35); }
 .signup-fields input:focus { border-color: var(--ember); }
 .signup-error { font-size: 13px; color: #e05540; margin-top: 6px; }
-.signup-success { display: flex; align-items: center; gap: 12px; justify-content: center; padding: 18px 24px; background: rgba(74,158,106,.08); border: 1px solid rgba(74,158,106,.25); border-radius: 8px; max-width: 480px; margin: 0 auto; }
-.signup-success-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(74,158,106,.15); border: 1px solid rgba(74,158,106,.4); color: #4a9e6a; font-size: 13px; line-height: 28px; text-align: center; flex-shrink: 0; }
-.signup-success-msg { font-size: 14px; color: var(--text); text-align: left; line-height: 1.5; }
-.cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ember-lt); margin-bottom: 20px; }
-.cta-title { font-family: 'Instrument Serif', serif; font-size: clamp(34px, 4vw, 54px); font-weight: 400; line-height: 1.12; letter-spacing: -.025em; color: var(--white); margin-bottom: 18px; }
-.cta-body { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 460px; margin: 0 auto 44px; }
-.cta-actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
-.cta-note { font-size: 12.5px; color: var(--faint); margin-top: 20px; }
+.signup-success {
+  display: flex; align-items: center; gap: 12px; justify-content: center;
+  padding: 18px 24px; background: rgba(42,112,64,.1); border: 1px solid rgba(42,112,64,.25);
+  border-radius: 8px; max-width: 480px; margin: 0 auto;
+}
+.signup-success-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(42,112,64,.15); border: 1px solid rgba(42,112,64,.4);
+  color: var(--green); font-size: 13px; line-height: 28px; text-align: center; flex-shrink: 0;
+}
+.signup-success-msg { font-size: 14px; color: #f5f0e8; text-align: left; line-height: 1.5; }
+
+/* ─── MERCH STRIP ─────────────────────────────────── */
+#merch {
+  padding: 40px 48px;
+  background: var(--heading);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.merch-strip { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.merch-gem-small { opacity: .35; flex-shrink: 0; }
+.merch-quotes { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; flex: 1; }
+.mq { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 400; color: rgba(245,240,232,.75); white-space: nowrap; }
+.mq-sep { font-size: 14px; color: rgba(245,240,232,.2); }
+.merch-aside { font-size: 12px; color: rgba(245,240,232,.25); letter-spacing: .03em; white-space: nowrap; }
 
 /* ─── FOOTER ──────────────────────────────────────── */
-footer { padding: 32px 48px; background: var(--bg); border-top: 1px solid var(--border); }
+footer {
+  padding: 32px 48px;
+  background: var(--heading);
+  border-top: 1px solid rgba(255,255,255,.07);
+}
 .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .footer-left { display: flex; align-items: center; gap: 28px; }
-.footer-copy { font-size: 12px; color: var(--faint); }
+.footer-copy { font-size: 13px; color: rgba(245,240,232,.3); }
+.footer-copy a { color: inherit; }
 .footer-links { display: flex; gap: 20px; list-style: none; }
-.footer-links a { font-size: 12px; color: var(--faint); text-decoration: none; transition: color .2s; }
-.footer-links a:hover { color: var(--muted); }
+.footer-links a { font-size: 13px; color: rgba(245,240,232,.3); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: rgba(245,240,232,.7); }
+
+/* ─── GHOST GEM + GRAIN ───────────────────────────── */
+.hero-bg-gem {
+  position: fixed; right: -140px; top: 50vh;
+  transform: translateY(-50%);
+  width: 460px; height: 460px;
+  pointer-events: none; z-index: 50;
+  opacity: .038; mix-blend-mode: multiply;
+}
+.grain {
+  position: fixed; inset: 0; z-index: 9998;
+  pointer-events: none; user-select: none;
+  opacity: .055; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
 
 /* ─── ANIMATIONS ──────────────────────────────────── */
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -719,25 +886,42 @@ footer { padding: 32px 48px; background: var(--bg); border-top: 1px solid var(--
 
 /* ─── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 960px) {
-  .nav-inner { padding: 0 24px; }
+  .nav-inner { padding: 0 20px; }
   .nav-links { display: none; }
-  #hero { padding: 56px 24px; min-height: auto; }
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .nav-contact { display: none; }
+
+  #hero { padding: 52px 20px 48px; min-height: auto; }
+  .hero-inner { grid-template-columns: 1fr; gap: 44px; }
+  .hero-visual { display: none; }
+
   .signal-bar .inner { grid-template-columns: 1fr 1fr; }
-  .signal-item { border-bottom: 1px solid var(--border); }
-  #soc2-explainer, #how-it-works, #ai-risk, #diff, #faq, #sample-report, #contact { padding: 64px 24px; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .faq-item { border-right: none; }
-  .faq-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
-  .faq-full { border-bottom: none; }
-  .tsc-grid { grid-template-columns: 1fr; gap: 28px; }
-  .steps { grid-template-columns: 1fr; }
-  .ai-grid { grid-template-columns: 1fr; gap: 48px; }
-  .diff-grid { grid-template-columns: 1fr; gap: 28px; }
-  .sample-grid { grid-template-columns: 1fr; gap: 48px; }
-  .sample-card-wrap { order: -1; }
-  footer { padding: 28px 24px; }
-  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
-  .footer-left { flex-direction: column; gap: 10px; }
+  .signal-item { padding: 28px 20px; border-bottom: 1px solid var(--border); }
+  .signal-num { font-size: 44px; }
+
+  #how-it-works, #pricing, #ai-risk, #diff, #contact, #merch { padding: 60px 20px; }
+  .ornament-rule { padding: 0 20px; }
+  .inner { padding: 0 20px; }
+
+  .steps { grid-template-columns: 1fr; gap: 2px; }
+
+  .pricing-grid { grid-template-columns: 1fr; gap: 2px; }
+  .pricing-enterprise { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .pe-left { flex-direction: column; gap: 12px; }
+  .pe-features { flex-direction: column; gap: 8px; }
+
+  .ai-grid { grid-template-columns: 1fr; gap: 44px; }
+
+  .diff-grid { grid-template-columns: 1fr; gap: 36px; }
+  .diff-num { font-size: 56px; }
+
+  .merch-strip { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .merch-quotes { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .mq-sep { display: none; }
+
+  .hero-bg-gem { width: 260px; height: 260px; right: -80px; }
+
+  footer { padding: 28px 20px; }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-left { flex-direction: column; gap: 10px; align-items: center; }
 }
 </style>
