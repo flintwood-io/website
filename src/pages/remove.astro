@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 const LAMBDA_URL = "https://xvpfb3b7avfnh4ad5tgkev733y0ukujb.lambda-url.us-east-1.on.aws/remove";
-const CF_REMOVE_URL = "https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active&filteringText=FlinttwoodAuditRole";
+const CF_REMOVE_URL = "https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active&filteringText=FlintwoodAuditRole";
 ---
 <Layout title="Remove Flintwood access — Flintwood">
 
@@ -41,12 +41,12 @@ const CF_REMOVE_URL = "https://us-east-1.console.aws.amazon.com/cloudformation/h
         </div>
         <div class="action-body">
           <h2>Remove IAM role from your AWS account</h2>
-          <p>Deletes the <code>FlinttwoodAuditRole</code> CloudFormation stack from your AWS Console. This immediately revokes Flintwood's read access to your account — takes about 30 seconds.</p>
+          <p>Deletes the <code>FlintwoodAuditRole</code> CloudFormation stack from your AWS Console. This immediately revokes Flintwood's read access to your account — takes about 30 seconds.</p>
           <a class="btn btn-primary" href={CF_REMOVE_URL} target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Open AWS Console to delete stack
           </a>
-          <div class="action-note">CloudFormation → Stacks → FlinttwoodAuditRole → Delete</div>
+          <div class="action-note">CloudFormation → Stacks → FlintwoodAuditRole → Delete</div>
         </div>
       </div>
 

@@ -5,7 +5,7 @@ const LAMBDA_URL = "https://xvpfb3b7avfnh4ad5tgkev733y0ukujb.lambda-url.us-east-
 const CF_TEMPLATE_URL = "https://flintwood-public-738497419241.s3.amazonaws.com/customer-iam-role.yaml";
 const CF_REGION = "us-east-1";
 const FLINTWOOD_ACCOUNT_ID = "738497419241";
-const CF_REMOVE_URL = `https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active&filteringText=FlinttwoodAuditRole`;
+const CF_REMOVE_URL = `https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active&filteringText=FlintwoodAuditRole`;
 ---
 <Layout title="Connect your AWS account — Flintwood">
 
@@ -80,8 +80,8 @@ const CF_REMOVE_URL = `https://us-east-1.console.aws.amazon.com/cloudformation/h
 
           <div class="arn-help">
             <div class="arn-help-title">Where to find it</div>
-            <div class="arn-help-body">CloudFormation → Stacks → <strong>FlinttwoodAuditRole</strong> → Outputs tab → <strong>RoleArn</strong></div>
-            <div class="arn-example">arn:aws:iam::<em>your-account-id</em>:role/FlinttwoodAuditRole</div>
+            <div class="arn-help-body">CloudFormation → Stacks → <strong>FlintwoodAuditRole</strong> → Outputs tab → <strong>RoleArn</strong></div>
+            <div class="arn-example">arn:aws:iam::<em>your-account-id</em>:role/FlintwoodAuditRole</div>
           </div>
 
           <form id="arn-form">
@@ -91,7 +91,7 @@ const CF_REMOVE_URL = `https://us-east-1.console.aws.amazon.com/cloudformation/h
                 type="text"
                 id="role-arn"
                 name="role_arn"
-                placeholder="arn:aws:iam::123456789012:role/FlinttwoodAuditRole"
+                placeholder="arn:aws:iam::123456789012:role/FlintwoodAuditRole"
                 autocomplete="off"
                 spellcheck="false"
               />
@@ -140,8 +140,8 @@ const CF_REMOVE_URL = `https://us-east-1.console.aws.amazon.com/cloudformation/h
   // Build CloudFormation quick-create URL — pre-fills both parameters
   const cfParams = new URLSearchParams({
     templateURL: CF_TEMPLATE_URL,
-    stackName: 'FlinttwoodAuditRole',
-    param_FlinttwoodAccountId: FLINTWOOD_ACCOUNT_ID,
+    stackName: 'FlintwoodAuditRole',
+    param_FlintwoodAccountId: FLINTWOOD_ACCOUNT_ID,
   });
   if (token) cfParams.set('param_ExternalId', token);
 
